@@ -43,6 +43,7 @@ typedef struct node
     int length;
     int is_negative;
     int is_ptr;
+    int is_hex;
 
 } Wordifiers;
 
@@ -74,6 +75,7 @@ int print_X(int num);
 void print_p( unsigned long int num);
 void print_percent(void);
 void print_unknown(char unknown);
+int print_unmodified_s(char *string);
 
 // Extras
 void initialize_struct();

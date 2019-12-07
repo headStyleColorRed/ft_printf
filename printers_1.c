@@ -66,21 +66,23 @@ void print_u(unsigned int num)
 }
 
 int print_x(int num)
-{		
-		ft_putnbr_base(num, 1);
-	return (0);
+{
+    wordifier.is_hex = 1;
+    ft_putnbr_base(num, 1);
+    return (0);
 }
 
 int print_X(int num)
 {
-	ft_putnbr_base(num, 2);
-	return (0);
+    wordifier.is_hex = 1;
+    ft_putnbr_base(num, 2);
+    return (0);
 }
 
-void print_p( unsigned long int num)
+void print_p(unsigned long int num)
 {
-	wordifier.is_ptr = 1;
-	ft_putnbr_base(num, 1);
+    wordifier.is_ptr = 1;
+    ft_putnbr_base(num, 1);
 }
 
 void print_percent(void)
@@ -94,4 +96,24 @@ void print_unknown(char unknown)
     print_percent();
     write(1, &unknown, 1);
     modifier.length++;
+}
+
+int print_unmodified_s(char *string)
+{
+    int i;
+    i = 0;
+    if (ft_strlen(string) > 8)
+    {
+        wordifier.length = ft_strlen(string) - 8;
+        i += wordifier.length;
+    }
+    else
+        wordifier.length = ft_strlen(string);
+    handle_flags(1);
+
+    while (string[i] != '\0')
+        write(1, &string[i++], 1);
+    handle_flags(2);
+    modifier.length += wordifier.length;
+    return (0);
 }

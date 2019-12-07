@@ -20,7 +20,7 @@ RM = rm -f
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	@gcc -c $(FLAG) $(OPTION) $(SRC)
+	@gcc -c $(FLAG) $(SRC)
 	@ar -rcv $(NAME) $(OBJ)
 	@ranlib $(NAME)
 

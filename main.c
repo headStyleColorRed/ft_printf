@@ -1,105 +1,461 @@
 #include "printf_lib.h"
 
-
-int main(void)
+int pointeando()
 {
 	int my_total;
 	int his_total;
-	int *b = &his_total;
+	int *b = &my_total;
+	int *c = &his_total;
+
+	printf("\n\n\n\n\n\n+++++++++++ Probamos con POINTERS!:  ++++++++++++++++++\n");
+	my_total = ft_printf("Vaya qué cosas %s con numeros como el %p\n", "me pasan aquí.", b);
+	his_total = printf("Vaya qué cosas %s con numeros como el %p\n", "me pasan aquí.", b);
+	printf("My total -> %d\n", my_total);
+	printf("Histotal -> %d\n", his_total);
+	if (my_total != his_total)
+	{
+		printf("MAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAL!!!!!!!!!!!!\n");
+		return (1);
+	}
+
+	printf("\n\n\n\n\n\n+++++++++++ Probamos con POINTERS!:  ++++++++++++++++++\n");
+	my_total = ft_printf("Vaya qué cosas %s con numeros como el %20p\n", "me pasan aquí.", c);
+	his_total = printf("Vaya qué cosas %s con numeros como el %20p\n", "me pasan aquí.", c);
+	printf("My total -> %d\n", my_total);
+	printf("Histotal -> %d\n", his_total);
+	if (my_total != his_total)
+	{
+		printf("MAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAL!!!!!!!!!!!!\n");
+		return (1);
+	}
+
+	printf("\n\n\n\n\n\n+++++++++++ Probamos con POINTERS!:  ++++++++++++++++++\n");
+	my_total = ft_printf("Vaya qué cosas %s con numeros como el %20p\n", "me pasan aquí.", b);
+	his_total = printf("Vaya qué cosas %s con numeros como el %20p\n", "me pasan aquí.", b);
+	printf("My total -> %d\n", my_total);
+	printf("Histotal -> %d\n", his_total);
+	if (my_total != his_total)
+	{
+		printf("MAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAL!!!!!!!!!!!!\n");
+		return (1);
+	}
+
+	printf("\n\n\n\n\n\n+++++++++++ Probamos con POINTERS!:  ++++++++++++++++++\n");
+	my_total = ft_printf("Vaya qué cosas %s con numeros como el %*p\n", "me pasan aquí.", 20, c);
+	his_total = printf("Vaya qué cosas %s con numeros como el %*p\n", "me pasan aquí.", 20, c);
+	printf("My total -> %d\n", my_total);
+	printf("Histotal -> %d\n", his_total);
+	if (my_total != his_total)
+	{
+		printf("MAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAL!!!!!!!!!!!!\n");
+		return (1);
+	}
+
+
+
+	return (0);
+}
+
+int hexadecimal()
+{
+	int my_total;
+	int his_total;
+
+	printf("\n\n\n\n\n\n+++++++++++ Probamos con HEXADCIMAL:  ++++++++++++++++++\n");
+	my_total = ft_printf("Vaya qué cosas %s con numeros como el %x\n", "me pasan aquí.", 15);
+	his_total = printf("Vaya qué cosas %s con numeros como el %x\n", "me pasan aquí.", 15);
+	printf("My total -> %d\n", my_total);
+	printf("Histotal -> %d\n", his_total);
+	if (my_total != his_total)
+	{
+		printf("MAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAL!!!!!!!!!!!!\n");
+		return (1);
+	}
+
+	printf("\n\n\n\n\n\n+++++++++++ Probamos con HEXADCIMAL:  ++++++++++++++++++\n");
+	my_total = ft_printf("Vaya qué cosas %s con numeros como el %10x\n", "me pasan aquí.", 15);
+	his_total = printf("Vaya qué cosas %s con numeros como el %10x\n", "me pasan aquí.", 15);
+	printf("My total -> %d\n", my_total);
+	printf("Histotal -> %d\n", his_total);
+	if (my_total != his_total)
+	{
+		printf("MAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAL!!!!!!!!!!!!\n");
+		return (1);
+	}
+
+	printf("\n\n\n\n\n\n+++++++++++ Probamos con HEXADCIMAL:  ++++++++++++++++++\n");
+	my_total = ft_printf("Vaya qué cosas %s con numeros como el %.3x\n", "me pasan aquí.", 15529);
+	his_total = printf("Vaya qué cosas %s con numeros como el %.3x\n", "me pasan aquí.", 15529);
+	printf("My total -> %d\n", my_total);
+	printf("Histotal -> %d\n", his_total);
+	if (my_total != his_total)
+	{
+		printf("MAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAL!!!!!!!!!!!!\n");
+		return (1);
+	}
+
+	printf("\n\n\n\n\n\n+++++++++++ Probamos con HEXADCIMAL:  ++++++++++++++++++\n");
+	my_total = ft_printf("Vaya qué cosas %s con numeros como el %*.*x\n", "me pasan aquí.", 15, 3, 15529);
+	his_total = printf("Vaya qué cosas %s con numeros como el %*.*x\n", "me pasan aquí.", 15, 3, 15529);
+	printf("My total -> %d\n", my_total);
+	printf("Histotal -> %d\n", his_total);
+	if (my_total != his_total)
+	{
+		printf("MAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAL!!!!!!!!!!!!\n");
+		return (1);
+	}
+
+	printf("\n\n\n\n\n\n+++++++++++ Probamos con HEXADCIMAL:  ++++++++++++++++++\n");
+	my_total = ft_printf("Vaya qué cosas %s con numeros como el %010x\n", "me pasan aquí.", 2147483647);
+	his_total = printf("Vaya qué cosas %s con numeros como el %010x\n", "me pasan aquí.", 2147483647);
+	printf("My total -> %d\n", my_total);
+	printf("Histotal -> %d\n", his_total);
+	if (my_total != his_total)
+	{
+		printf("MAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAL!!!!!!!!!!!!\n");
+		return (1);
+	}
+
+	printf("\n\n\n\n\n\n+++++++++++ Probamos con HEXADCIMAL:  ++++++++++++++++++\n");
+	my_total = ft_printf("Vaya qué cosas %s con numeros como el %10x\n", "me pasan aquí.", -2147483647);
+	his_total = printf("Vaya qué cosas %s con numeros como el %10x\n", "me pasan aquí.", -2147483647);
+	printf("My total -> %d\n", my_total);
+	printf("Histotal -> %d\n", his_total);
+	if (my_total != his_total)
+	{
+		printf("MAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAL!!!!!!!!!!!!\n");
+		return (1);
+	}
+
+	return (0);
+}
+
+int unsigned_testing()
+{
+	int my_total;
+	int his_total;
+
+	printf("\n\n\n\n\n\n+++++++++++ Probamos con UNSIGNED:  ++++++++++++++++++\n");
+	my_total = ft_printf("Vaya qué cosas %s con numeros como el %u\n", "me pasan aquí.", 15);
+	his_total = printf("Vaya qué cosas %s con numeros como el %u\n", "me pasan aquí.", 15);
+	printf("My total -> %d\n", my_total);
+	printf("Histotal -> %d\n", his_total);
+	if (my_total != his_total)
+	{
+		printf("MAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAL!!!!!!!!!!!!\n");
+		return (1);
+	}
+
+	printf("\n\n\n\n\n\n+++++++++++ Probamos con UNSIGNED:  ++++++++++++++++++\n");
+	my_total = ft_printf("Vaya qué cosas %s con numeros como el %10u\n", "me pasan aquí.", 15);
+	his_total = printf("Vaya qué cosas %s con numeros como el %10u\n", "me pasan aquí.", 15);
+	printf("My total -> %d\n", my_total);
+	printf("Histotal -> %d\n", his_total);
+	if (my_total != his_total)
+	{
+		printf("MAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAL!!!!!!!!!!!!\n");
+		return (1);
+	}
+
+	printf("\n\n\n\n\n\n+++++++++++ Probamos con UNSIGNED:  ++++++++++++++++++\n");
+	my_total = ft_printf("Vaya qué cosas %s con numeros como el %.3u\n", "me pasan aquí.", 15529);
+	his_total = printf("Vaya qué cosas %s con numeros como el %.3u\n", "me pasan aquí.", 15529);
+	printf("My total -> %d\n", my_total);
+	printf("Histotal -> %d\n", his_total);
+	if (my_total != his_total)
+	{
+		printf("MAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAL!!!!!!!!!!!!\n");
+		return (1);
+	}
+
+	printf("\n\n\n\n\n\n+++++++++++ Probamos con UNSIGNED:  ++++++++++++++++++\n");
+	my_total = ft_printf("Vaya qué cosas %s con numeros como el %*.*u\n", "me pasan aquí.", 15, 3, 15529);
+	his_total = printf("Vaya qué cosas %s con numeros como el %*.*u\n", "me pasan aquí.", 15, 3, 15529);
+	printf("My total -> %d\n", my_total);
+	printf("Histotal -> %d\n", his_total);
+	if (my_total != his_total)
+	{
+		printf("MAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAL!!!!!!!!!!!!\n");
+		return (1);
+	}
+
+	printf("\n\n\n\n\n\n+++++++++++ Probamos con UNSIGNED:  ++++++++++++++++++\n");
+	my_total = ft_printf("Vaya qué cosas %s con numeros como el %010u\n", "me pasan aquí.", 2147483647);
+	his_total = printf("Vaya qué cosas %s con numeros como el %010u\n", "me pasan aquí.", 2147483647);
+	printf("My total -> %d\n", my_total);
+	printf("Histotal -> %d\n", his_total);
+	if (my_total != his_total)
+	{
+		printf("MAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAL!!!!!!!!!!!!\n");
+		return (1);
+	}
+
+	return (0);
+}
+
+int integer_testing()
+{
+	int my_total;
+	int his_total;
+
+	printf("\n\n\n\n\n\n+++++++++++ Probamos con INTEGERSs:  ++++++++++++++++++\n");
+	my_total = ft_printf("Vaya qué cosas %s con numeros como el %d\n", "me pasan aquí.", 15);
+	his_total = printf("Vaya qué cosas %s con numeros como el %d\n", "me pasan aquí.", 15);
+	printf("My total -> %d\n", my_total);
+	printf("Histotal -> %d\n", his_total);
+	if (my_total != his_total)
+	{
+		printf("MAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAL!!!!!!!!!!!!\n");
+		return (1);
+	}
+
+	printf("\n\n\n\n\n\n+++++++++++ Probamos con INTEGERS:  ++++++++++++++++++\n");
+	my_total = ft_printf("Vaya qué cosas %s con numeros como el %10d\n", "me pasan aquí.", 15);
+	his_total = printf("Vaya qué cosas %s con numeros como el %10d\n", "me pasan aquí.", 15);
+	printf("My total -> %d\n", my_total);
+	printf("Histotal -> %d\n", his_total);
+	if (my_total != his_total)
+	{
+		printf("MAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAL!!!!!!!!!!!!\n");
+		return (1);
+	}
+
+	printf("\n\n\n\n\n\n+++++++++++ Probamos con INTEGERSs:  ++++++++++++++++++\n");
+	my_total = ft_printf("Vaya qué cosas %s con numeros como el %.3d\n", "me pasan aquí.", 15529);
+	his_total = printf("Vaya qué cosas %s con numeros como el %.3d\n", "me pasan aquí.", 15529);
+	printf("My total -> %d\n", my_total);
+	printf("Histotal -> %d\n", his_total);
+	if (my_total != his_total)
+	{
+		printf("MAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAL!!!!!!!!!!!!\n");
+		return (1);
+	}
+
+	printf("\n\n\n\n\n\n+++++++++++ Probamos con INTEGERSs:  ++++++++++++++++++\n");
+	my_total = ft_printf("Vaya qué cosas %s con numeros como el %*.*d\n", "me pasan aquí.", 15, 3, 15529);
+	his_total = printf("Vaya qué cosas %s con numeros como el %*.*d\n", "me pasan aquí.", 15, 3, 15529);
+	printf("My total -> %d\n", my_total);
+	printf("Histotal -> %d\n", his_total);
+	if (my_total != his_total)
+	{
+		printf("MAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAL!!!!!!!!!!!!\n");
+		return (1);
+	}
+
+	printf("\n\n\n\n\n\n+++++++++++ Probamos con INTEGERS:  ++++++++++++++++++\n");
+	my_total = ft_printf("Vaya qué cosas %s con numeros como el %010d\n", "me pasan aquí.", 2147483647);
+	his_total = printf("Vaya qué cosas %s con numeros como el %010d\n", "me pasan aquí.", 2147483647);
+	printf("My total -> %d\n", my_total);
+	printf("Histotal -> %d\n", his_total);
+	if (my_total != his_total)
+	{
+		printf("MAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAL!!!!!!!!!!!!\n");
+		return (1);
+	}
+
+	printf("\n\n\n\n\n\n+++++++++++ Probamos con INTEGERS:  ++++++++++++++++++\n");
+	my_total = ft_printf("Vaya qué cosas %s con numeros como el %010d\n", "me pasan aquí.", -23647);
+	his_total = printf("Vaya qué cosas %s con numeros como el %010d\n", "me pasan aquí.", -23647);
+	printf("My total -> %d\n", my_total);
+	printf("Histotal -> %d\n", his_total);
+	if (my_total != his_total)
+	{
+		printf("MAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAL!!!!!!!!!!!!\n");
+		return (1);
+	}
+
+	return (0);
+}
+
+int string_tester()
+{
+	int my_total;
+	int his_total;
+
+	printf("\n\n\n\n\n\n+++++++++++ Probamos con %%s:  ++++++++++++++++++\n");
+	my_total = ft_printf("Vaya qué cosas %s\n", "me pasan aquí.");
+	his_total = printf("Vaya qué cosas %s\n", "me pasan aquí.");
+	printf("My total -> %d\n", my_total);
+	printf("Histotal -> %d\n", his_total);
+	if (my_total != his_total)
+	{
+		printf("MAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAL!!!!!!!!!!!!\n");
+		return (1);
+	}
+
+	printf("\n\n\n\n\n\n+++++++++++ Probamos con %%s:  ++++++++++++++++++\n");
+	my_total = ft_printf("Vaya qué cosas %20s\n", "me pasan aquí.");
+	his_total = printf("Vaya qué cosas %20s\n", "me pasan aquí.");
+	printf("My total -> %d\n", my_total);
+	printf("Histotal -> %d\n", his_total);
+	if (my_total != his_total)
+	{
+		printf("MAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAL!!!!!!!!!!!!\n");
+		return (1);
+	}
+
+	printf("\n\n\n\n\n\n+++++++++++ Probamos con %%s:  ++++++++++++++++++\n");
+	my_total = ft_printf("Vaya qué cosas %-20s\n", "me pasan aquí.");
+	his_total = printf("Vaya qué cosas %-20s\n", "me pasan aquí.");
+	printf("My total -> %d\n", my_total);
+	printf("Histotal -> %d\n", his_total);
+	if (my_total != his_total)
+	{
+		printf("MAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAL!!!!!!!!!!!!\n");
+		return (1);
+	}
+
+	printf("\n\n\n\n\n\n+++++++++++ Probamos con %%s:  ++++++++++++++++++\n");
+	my_total = ft_printf("Vaya qué cosas %20.5s\n", "me pasan aquí.");
+	his_total = printf("Vaya qué cosas %20.5s\n", "me pasan aquí.");
+	printf("My total -> %d\n", my_total);
+	printf("Histotal -> %d\n", his_total);
+	if (my_total != his_total)
+	{
+		printf("MAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAL!!!!!!!!!!!!\n");
+		return (1);
+	}
+
+	printf("\n\n\n\n\n\n+++++++++++ Probamos con %%s:  ++++++++++++++++++\n");
+	my_total = ft_printf("Vaya qué cosas %*.*s\n", 17, 6, "me pasan aquí.");
+	his_total = printf("Vaya qué cosas %*.*s\n", 17, 6, "me pasan aquí.");
+	printf("My total -> %d\n", my_total);
+	printf("Histotal -> %d\n", his_total);
+	if (my_total != his_total)
+	{
+		printf("MAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAL!!!!!!!!!!!!\n");
+		return (1);
+	}
+
+	printf("\n\n\n\n\n\n+++++++++++ Probamos con %%s:  ++++++++++++++++++\n");
+	my_total = ft_printf("Vaya qué cosas %*.*s\n", 5, 15, "me pasan aquí.");
+	his_total = printf("Vaya qué cosas %*.*s\n", 5, 15, "me pasan aquí.");
+	printf("My total -> %d\n", my_total);
+	printf("Histotal -> %d\n", his_total);
+	if (my_total != his_total)
+	{
+		printf("MAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAL!!!!!!!!!!!!\n");
+		return (1);
+	}
+
+	return (0);
+}
+
+int char_tester(void)
+{
+
+	int my_total;
+	int his_total;
 
 	printf("\n+++++++++ M Y   L A Z Y   T E S T E R ++++++++++++\n");
+
 	printf("\n\n +++++++++++++++ Probamos con %%c:  ++++++++++++++++++\n");
 	my_total = ft_printf("Vaya qué cos%cs\n", 'a');
 	his_total = printf("Vaya qué cos%cs\n", 'a');
 	printf("My total -> %d\n", my_total);
 	printf("Histotal -> %d\n", his_total);
 	if (my_total != his_total)
+	{
 		printf("MAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAL!!!!!!!!!!!!\n");
+		return (1);
+	}
 
-	printf("\n\n +++++++++++++++ Probamos con %%s:  ++++++++++++++++++\n");
-	my_total = ft_printf("Parece que todo %s\n", "funciona bien!");
-	his_total = printf("Parece que todo %s\n", "funciona bien!");
+	printf("\n\n +++++++++++++++ Probamos con %%c:  ++++++++++++++++++\n");
+	my_total = ft_printf("Vaya qué cos%10cs\n", 'a');
+	his_total = printf("Vaya qué cos%10cs\n", 'a');
 	printf("My total -> %d\n", my_total);
 	printf("Histotal -> %d\n", his_total);
 	if (my_total != his_total)
+	{
 		printf("MAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAL!!!!!!!!!!!!\n");
+		return (1);
+	}
 
-	printf("\n\n +++++++++++++++ Probamos con %%u:  ++++++++++++++++++\n");
-	my_total = ft_printf("%u as\n", 234867);
-	his_total = printf("%u as\n", 234867);
+	printf("\n\n +++++++++++++++ Probamos con %%c:  ++++++++++++++++++\n");
+	my_total = ft_printf("Vaya qué cos%-10cs\n", 'a');
+	his_total = printf("Vaya qué cos%-10cs\n", 'a');
 	printf("My total -> %d\n", my_total);
 	printf("Histotal -> %d\n", his_total);
 	if (my_total != his_total)
+	{
 		printf("MAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAL!!!!!!!!!!!!\n");
+		return (1);
+	}
 
-	printf("\n\n +++++++++++++++ Probamos con %%d:  ++++++++++++++++++\n");
-	my_total = ft_printf("el numero es: %d\n", 23);
-	his_total = printf("el numero es: %d\n", 23);
+	printf("\n\n +++++++++++++++ Probamos con %%c:  ++++++++++++++++++\n");
+	my_total = ft_printf("Vaya qué cos%*cs\n", 10, 'a');
+	his_total = printf("Vaya qué cos%*cs\n", 10, 'a');
 	printf("My total -> %d\n", my_total);
 	printf("Histotal -> %d\n", his_total);
 	if (my_total != his_total)
+	{
 		printf("MAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAL!!!!!!!!!!!!\n");
-
-	printf("\n\n +++++++++++++++ Probamos con %%x:  ++++++++++++++++++\n");
-	my_total = ft_printf("hexadecima uwu! %x\n", 2342867);
-	his_total = printf("hexadecima uwu! %x\n", 2342867);
-	printf("My total -> %d\n", my_total);
-	printf("Histotal -> %d\n", his_total);
-	if (my_total != his_total)
-		printf("MAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAL!!!!!!!!!!!!\n");
-
-	printf("\n\n +++++++++++++++ Probamos con %%X:  ++++++++++++++++++\n");
-	my_total = ft_printf("hexadecima uwu! %X\n", 2342867);
-	his_total = printf("hexadecima uwu! %X\n", 2342867);
-	printf("My total -> %d\n", my_total);
-	printf("Histotal -> %d\n", his_total);
-	if (my_total != his_total)
-		printf("MAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAL!!!!!!!!!!!!\n");
-
-	printf("\n\n +++++++++++++++ Probamos con %%i:  ++++++++++++++++++\n");
-	my_total = ft_printf("y los itegers como %i\n", 2867);
-	his_total = printf("y los itegers como %i\n", 2867);
-	printf("My total -> %d\n", my_total);
-	printf("Histotal -> %d\n", his_total);
-	if (my_total != his_total)
-		printf("MAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAL!!!!!!!!!!!!\n");
-
-
-	printf("\n\n +++++++++++++++ Probamos con espacios:  ++++++++++++++++++\n");
-	my_total = ft_printf("Vaya %20d cosas que %% %s\n", 10, "me están pasando.");
-	his_total = printf("Vaya %20d cosas que %% %s\n", 10, "me están pasando.");
-	printf("My  total -> %d\n", my_total);
-	printf("His total -> %d\n", his_total);
-	if (my_total != his_total)
-		printf("MAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAL!!!!!!!!!!!!\n");
-
-
-	printf("\n\n +++++++++++++++ Probamos con ceros:  ++++++++++++++++++\n");
-	my_total = ft_printf("Vaya %04d cosas que %% %s\n", -10, "me están pasando.");
-	his_total = printf("Vaya %04d cosas que %% %s\n", -10, "me están pasando.");
-	printf("My  total -> %d\n", my_total);
-	printf("His total -> %d\n", his_total);
-	if (my_total != his_total)
-		printf("MAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAL!!!!!!!!!!!!\n");
-
-
-	printf("\n\n +++++++++++++++ Probamos mezcla de ceros y espacios:  ++++++++++++++++++\n");
-	my_total = ft_printf("%-15d %s aquí tenemos un %% además de %c%c hexadecimal %08d\n", -10, "hola que pasa", 'u', 'n', 2342);
-	his_total = printf("%-15d %s aquí tenemos un %% además de %c%c hexadecimal %08d\n", -10, "hola que pasa", 'u', 'n', 2342);
-	printf("My  total -> %d\n", my_total);
-	printf("His total -> %d\n", his_total);
-	if (my_total != his_total)
-		printf("MAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAL!!!!!!!!!!!!\n");
-
-
-	printf("\n\n +++++++++++++++ Probamos los punteros!:  ++++++++++++++++++\n");
-	my_total = ft_printf("frase |%-20p|\n", b);
-	his_total = printf("frase |%-20p|\n", b);
-	printf("My  total -> %d\n", my_total);
-	printf("His total -> %d\n", his_total);
-	if (my_total != his_total)
-		printf("MAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAL!!!!!!!!!!!!\n");
+		return (1);
+	}
 
 	return (0);
 }
 
+int call_functions()
+{
+	int result;
+	result = char_tester();
+	if (result == 1)
+		return (0);
+
+	result = string_tester();
+	if (result == 1)
+		return (0);
+
+	result = integer_testing();
+	if (result == 1)
+		return (0);
+
+	result = unsigned_testing();
+	if (result == 1)
+		return (0);
+
+	result = hexadecimal();
+	if (result == 1)
+		return (0);
+
+	result = pointeando();
+	if (result == 1)
+		return (0);
+
+	printf("\n                             \n");
+	printf("        # # #   #    #         \n");
+	printf("        #   #   #  #           \n");
+	printf("        #   #   #              \n");
+	printf("        #   #   # #            \n");
+	printf("        # # #   #   #          \n");
+	printf("\n                             \n");
+
+	return (0);
+}
+
+int main(void)
+{
+	//int *b = &his_total;
+	int result;
+
+	result = call_functions();
+	if (result == 0)
+		return (0);
+
+	return (0);
+}
+
+/*
+
+	int main(void)
+	{
+		int my_total;
+		int his_total;
+
+		my_total = ft_printf("Vaya |%17.15x|\n", -214647);
+		his_total = printf("Vaya |%17.15x|\n", -214647);
+		printf("My total -> %d\n", my_total);
+		printf("Histotal -> %d\n", his_total);
+}
+*/

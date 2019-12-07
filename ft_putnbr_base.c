@@ -66,6 +66,9 @@ int ft_putnbr_base(unsigned long long int nbr, int base_type)
 
 	while (--i >= 0)
 		final_number[z++] = base[nbr_final[i]];
-	print_s(final_number);
+	if (wordifier.is_hex == 1)
+		print_unmodified_s(final_number);
+	else
+		print_s(final_number);
 	return (z);
 }

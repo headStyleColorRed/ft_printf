@@ -30,17 +30,17 @@ int precision_counter_machine(char *string, int i)
 	
 }
 
-int manage_wildcard(long int num, int option)
+int manage_wildcard(long num, int option)
 {
 	if (option == 1)
     {
 	    modifier.width = num;
-	    return (len(num));
+	    return (1);
     }
     else
     {
 	    modifier.precision = num;
-	    return (len(num) + 1);
+	    return (2);
     }
     
 }

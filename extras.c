@@ -11,6 +11,7 @@ void initialize_struct()
 	wordifier.length = 0;
 	wordifier.is_negative = 0;
 	wordifier.is_ptr = 0;
+	wordifier.is_hex = 0;
 }
 
 void print_modifiers()
