@@ -9,9 +9,11 @@ int flag_managment(char *string, int i, va_list arguments)
 	else if (string[i] == 'd' || string[i] == 'i')
 		print_d(va_arg(arguments, int));
 	else if (string[i] == 'u')
-    {
 		print_u(va_arg(arguments, unsigned int));
-    }
+	else if (string[i] == 'x')
+		print_x(va_arg(arguments, int));
+	else if (string[i] == 'X')
+		print_X(va_arg(arguments, int));
 	else if (string[i] == '\0')
 		return (-1);
 	return (0);
@@ -46,7 +48,6 @@ int ft_printf(const char *format, ...)
 	counter = 0;
 	i = 0;
 	j = 0;
-        printf("\n que pasa : %d\n\n", (long int)va_arg(arguments, unsigned int));
 	while (string[i])
 	{
 		if (string[i] == '%')

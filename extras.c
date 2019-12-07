@@ -10,6 +10,7 @@ void initialize_struct()
 
 	wordifier.length = 0;
 	wordifier.is_negative = 0;
+	wordifier.is_ptr = 0;
 }
 
 void print_modifiers()
@@ -21,6 +22,7 @@ void print_modifiers()
 	printf("modifier.i : %d\n", modifier.precision);
 	printf("modifier.to_modifie : %d\n", modifier.to_modifie);
 	printf("wordifier.length : %d\n", wordifier.length);
+	printf("wordifier.is_negative : %d\n", wordifier.is_negative);
 	printf("+++++++++++++++++++++++++++++++++++++++++++++\n");
 
 }

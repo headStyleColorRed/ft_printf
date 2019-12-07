@@ -5,8 +5,7 @@ int main(void)
 	int my_total;
 	int his_total;
 	// 4294967295
-	int Precision = 4294967295;
-	unsigned int biggerPrecision = (unsigned int)Precision;
+	unsigned int biggerPrecision = 4294967295;
 	const char *greetings = "Hola";
 
 	/*
@@ -16,8 +15,8 @@ int main(void)
 		printf("His total -> %d\n\n", his_total);
 	*/
 
-	my_total = ft_printf("|%u|\n", 4294967295);
-	  his_total = printf("|%u|\n", biggerPrecision);
+	my_total = ft_printf("|%-8x|\n", 1234);
+	  his_total = printf("|%-8x|\n", 1234);
 	printf("My  total -> %d\n", my_total);
 	printf("His total -> %d\n", his_total);
 }

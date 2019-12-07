@@ -42,6 +42,7 @@ typedef struct node
 {
     int length;
     int is_negative;
+    int is_ptr;
 
 } Wordifiers;
 
@@ -68,6 +69,8 @@ void print_c(int character);
 void print_s(char *string);
 void print_d(int num);
 int print_u(unsigned int num);
+int print_x(int num);
+int print_X(int num);
 
 // Extras
 void initialize_struct();
@@ -81,6 +84,8 @@ int handle_flags(int option);
 
 // Alone files
 char		*ft_itoa(int number);
+char		*ft_u_itoa(unsigned int number);
+int ft_putnbr_base(unsigned long long int nbr, int base_type);
 int	len(long number);
 
 

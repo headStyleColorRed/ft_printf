@@ -58,7 +58,7 @@ int print_u(unsigned int num)
     if (num < 0)
         num *= -1;
     handle_flags(1);
-    number = ft_itoa(num);
+    number = ft_u_itoa(num);
     if (wordifier.is_negative && modifier.flags != 2)
         write(1, "-", 1);
     //                          printf("\n el numero: %d y en string %s;\n", num, number);
@@ -66,4 +66,16 @@ int print_u(unsigned int num)
         write(1, &number[i++], 1);
     handle_flags(2);
     modifier.length += wordifier.length;
+}
+
+int print_x(int num)
+{		
+		ft_putnbr_base(num, 1);
+	return (0);
+}
+
+int print_X(int num)
+{
+	ft_putnbr_base(num, 2);
+	return (0);
 }
