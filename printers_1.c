@@ -48,20 +48,17 @@ void print_d(int num)
     modifier.length += wordifier.length;
 }
 
-int print_u(unsigned int num)
+void print_u(unsigned int num)
 {
     char *number;
     int i;
     i = 0;
 
     wordifier.length = len(num);
-    if (num < 0)
-        num *= -1;
     handle_flags(1);
     number = ft_u_itoa(num);
     if (wordifier.is_negative && modifier.flags != 2)
         write(1, "-", 1);
-    //                          printf("\n el numero: %d y en string %s;\n", num, number);
     while (number[i] != '\0' && i < wordifier.length)
         write(1, &number[i++], 1);
     handle_flags(2);
@@ -78,4 +75,23 @@ int print_X(int num)
 {
 	ft_putnbr_base(num, 2);
 	return (0);
+}
+
+void print_p( unsigned long int num)
+{
+	wordifier.is_ptr = 1;
+	ft_putnbr_base(num, 1);
+}
+
+void print_percent(void)
+{
+    write(1, "%", 1);
+    modifier.length++;
+}
+
+void print_unknown(char unknown)
+{
+    print_percent();
+    write(1, &unknown, 1);
+    modifier.length++;
 }

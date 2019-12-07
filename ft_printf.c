@@ -14,8 +14,14 @@ int flag_managment(char *string, int i, va_list arguments)
 		print_x(va_arg(arguments, int));
 	else if (string[i] == 'X')
 		print_X(va_arg(arguments, int));
+	else if (string[i] == 'p')
+		print_p(va_arg(arguments, unsigned long int));
+	else if (string[i] == '%')
+		print_percent();
 	else if (string[i] == '\0')
 		return (-1);
+	else
+		print_unknown(string[i]);
 	return (0);
 }
 
@@ -63,5 +69,6 @@ int ft_printf(const char *format, ...)
 		}
 		i++;
 	}
+	va_end(arguments);
 	return (modifier.length + j);
 }

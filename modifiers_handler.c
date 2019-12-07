@@ -13,7 +13,7 @@ void no_flags()
         write(1, " ", 1);
         i++;
     }
-    modifier.length = i;
+    modifier.length += i;
 }
 
 void added_flag()
@@ -29,7 +29,7 @@ void added_flag()
         while (minus_counter-- > wordifier.length)
             write(1, "0", 1);
 
-        modifier.length = modifier.width - wordifier.length;
+        modifier.length += modifier.width - wordifier.length;
     }
 }
 
@@ -63,19 +63,3 @@ int handle_flags(int option)
 
     return (0);
 }
-
-/*
-
-    if (modifier.width > 0 && modifier.precision != 1111)
-    {
-        while (minus_counter-- > wordifier.length)
-            write(1, " ", 1);
-        modifier.length = modifier.width - wordifier.length;
-    }
-    else if (modifier.width > 0)
-    {
-        while (minus_counter-- > wordifier.length)
-            write(1, " ", 1);
-        modifier.length = modifier.width - wordifier.length;
-    }
-    */

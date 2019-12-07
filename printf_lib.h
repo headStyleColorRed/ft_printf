@@ -68,9 +68,12 @@ int manage_wildcard(long int num, int option);
 void print_c(int character);
 void print_s(char *string);
 void print_d(int num);
-int print_u(unsigned int num);
+void print_u(unsigned int num);
 int print_x(int num);
 int print_X(int num);
+void print_p( unsigned long int num);
+void print_percent(void);
+void print_unknown(char unknown);
 
 // Extras
 void initialize_struct();
