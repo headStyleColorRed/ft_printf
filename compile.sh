@@ -1,0 +1,1 @@
+gcc  main.c ft_printf.c checkers.c ft_itoa.c  printf_lib.h extras.c machines.c ft_atoi.c printers_1.c modifiers_handler.c && ./a.out
