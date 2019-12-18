@@ -13,17 +13,23 @@ void print_s(char *string)
 {
     int i;
 
-    i = 0;
-    if (modifier.precision != 1111 && modifier.precision < ft_strlen(string))
-        wordifier.length = modifier.precision;
-    else
-        wordifier.length = ft_strlen(string);
-    handle_flags(1);
+    if (string)
+    {
 
-    while (string[i] != '\0' && i < modifier.precision)
-        write(1, &string[i++], 1);
-    handle_flags(2);
-    modifier.length += wordifier.length;
+        i = 0;
+        if (modifier.precision != 1111 && modifier.precision < ft_strlen(string))
+            wordifier.length = modifier.precision;
+        else
+            wordifier.length = ft_strlen(string);
+        handle_flags(1);
+
+        while (string[i] != '\0' && i < modifier.precision)
+            write(1, &string[i++], 1);
+        handle_flags(2);
+        modifier.length += wordifier.length;
+    }
+    else
+        print_nulls("(null)");
 }
 
 void print_d(int num)
@@ -32,8 +38,16 @@ void print_d(int num)
     int i;
     i = 0;
 
+    wordifier.is_num = 1;
+    if (modifier.width == 0 && modifier.precision != 1111 && modifier.flags == 0)
+    {
+        modifier.width = modifier.precision;
+        modifier.flags = 2;
+    }
+
+
     wordifier.length = len(num);
-    if (num < 0) // Number is negative signal
+    if (num < 0) 
     {
         wordifier.is_negative = 1;
         num *= -1;
@@ -87,7 +101,12 @@ void print_p(unsigned long int num)
 
 void print_percent(void)
 {
+    //print_modifiers();
+    //printf("me llaman dos veces\n");
+    wordifier.length = 1;
+    handle_flags(1);
     write(1, "%", 1);
+    handle_flags(2);
     modifier.length++;
 }
 
@@ -116,4 +135,22 @@ int print_unmodified_s(char *string)
     handle_flags(2);
     modifier.length += wordifier.length;
     return (0);
+}
+
+void print_nulls(char *string)
+{
+
+    int i;
+
+    i = 0;
+    if (modifier.precision != 1111 && modifier.precision < ft_strlen(string))
+        wordifier.length = modifier.precision;
+    else
+        wordifier.length = ft_strlen(string);
+    handle_flags(1);
+
+    while (string[i] != '\0' && i < modifier.precision)
+        write(1, &string[i++], 1);
+    handle_flags(2);
+    modifier.length += wordifier.length;
 }

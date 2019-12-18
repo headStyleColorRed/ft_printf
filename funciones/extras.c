@@ -1,4 +1,4 @@
-#include "printf_lib.h"
+#include "../printf_lib.h"
 
 void initialize_struct()
 {
@@ -12,6 +12,7 @@ void initialize_struct()
 	wordifier.is_negative = 0;
 	wordifier.is_ptr = 0;
 	wordifier.is_hex = 0;
+	wordifier.is_num = 0;
 }
 
 void print_modifiers()
@@ -20,18 +21,18 @@ void print_modifiers()
 
 	printf("modifier.flags : %d\n", modifier.flags);
 	printf("modifier.width : %d\n", modifier.width);
-	printf("modifier.i : %d\n", modifier.precision);
+	printf("modifier.precision : %d\n", modifier.precision);
 	printf("modifier.to_modifie : %d\n", modifier.to_modifie);
 	printf("wordifier.length : %d\n", wordifier.length);
 	printf("wordifier.is_negative : %d\n", wordifier.is_negative);
+	printf("wordifier.is_num : %d\n", wordifier.is_num);
 	printf("+++++++++++++++++++++++++++++++++++++++++++++\n");
-
 }
 
-void	*ft_calloc(size_t nitems, size_t size)
+void *ft_calloc(size_t nitems, size_t size)
 {
-	void	*result;
-	size_t	i;
+	void *result;
+	size_t i;
 
 	i = 0;
 	if (nitems == 0 || size == 0)
@@ -47,9 +48,9 @@ void	*ft_calloc(size_t nitems, size_t size)
 	return (result);
 }
 
-int		ft_strlen(char *str)
+int ft_strlen(char *str)
 {
-	int	i;
+	int i;
 
 	i = 0;
 	while (str[i] != '\0')
@@ -57,7 +58,7 @@ int		ft_strlen(char *str)
 	return (i);
 }
 
-int		ft_strcpy(char *dest, char *src)
+int ft_strcpy(char *dest, char *src)
 {
 	int i;
 
@@ -69,4 +70,15 @@ int		ft_strcpy(char *dest, char *src)
 	}
 	dest[i] = '\0';
 	return (i);
+}
+
+int		ft_isalnum(int c)
+{
+	if (c >= 48 && c <= 57)
+		return (1);
+	else if (c >= 65 && c <= 90)
+		return (2);
+	else if (c >= 97 && c <= 122)
+		return (3);
+	return (0);
 }

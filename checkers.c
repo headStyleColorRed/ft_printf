@@ -19,6 +19,11 @@ int check_for_width(char *string, int i, va_list arguments)
     int j;
 
     j = 0;
+    if (string[i] == '0')
+    {
+        j++;
+        i++;
+    }
     if (string[i] >= '1' && string[i] <= '9')
     {
         j += width_counter_machine(string, i);

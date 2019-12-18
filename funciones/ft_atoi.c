@@ -1,5 +1,5 @@
 
-#include "printf_lib.h"
+#include "../printf_lib.h"
 
 int		ft_isdigit(int c)
 {

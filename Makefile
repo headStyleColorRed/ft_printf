@@ -4,14 +4,14 @@ FLAG = -Wall -Wextra -Werror
 
 SRC =		ft_printf.c \
 			checkers.c \
-			ft_itoa.c \
-			extras.c \
+			funciones/ft_itoa.c \
+			funciones/extras.c \
 			machines.c \
-			ft_atoi.c \
+			funciones/ft_atoi.c \
 			printers_1.c \
 			modifiers_handler.c \
-			ft_u_itoa.c \
-			ft_putnbr_base.c \
+			funciones/ft_u_itoa.c \
+			funciones/ft_putnbr_base.c \
 
 OBJ = $(SRC:%.c=%.o)
 
@@ -26,9 +26,11 @@ $(NAME): $(OBJ)
 
 clean:
 	$(RM) $(OBJ)
+	$(RM) *.o *.out *.gch
 
 fclean: clean
 	$(RM) $(NAME)
+	$(RM) *.o *.out *.gch
 
 re: fclean all
 

@@ -19,17 +19,25 @@ void no_flags()
 void added_flag()
 {
     int minus_counter;
-
+    int result;
 
     minus_counter = modifier.width;
     if (modifier.width > 0 && modifier.flags == 2)
     {
         if (wordifier.is_negative)
+        {
             write(1, "-", 1);
+            if (modifier.precision != 1111)
+            {
+        modifier.length++; //cambiado
+                minus_counter++;
+            }
+        }
         while (minus_counter-- > wordifier.length)
             write(1, "0", 1);
-
-        modifier.length += modifier.width - wordifier.length;
+        result = modifier.width - wordifier.length;
+        if (result > 0)
+            modifier.length += modifier.width - wordifier.length;
     }
 }
 
@@ -40,7 +48,8 @@ void print_front_spaces()
     minus_counter = modifier.width;
     while (minus_counter-- > wordifier.length)
         write(1, " ", 1);
-    modifier.length += modifier.width - wordifier.length;
+    if (modifier.width > wordifier.length)
+        modifier.length += modifier.width - wordifier.length;
 }
 
 // Option 1 -> Before printing;

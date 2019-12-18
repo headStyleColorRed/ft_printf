@@ -1,4 +1,4 @@
-#include "printf_lib.h"
+#include "../printf_lib.h"
 
 
 void ft_putchar(char c)

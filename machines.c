@@ -4,7 +4,6 @@ int width_counter_machine(char *string, int i)
 {
 	char *spaces_string;
 	int j;
-
 	spaces_string = (char *)ft_calloc(5, 1);
 	j = 0;
 	while (string[i] >= 48 && string[i] <= 57)

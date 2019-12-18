@@ -35,7 +35,6 @@ int string_parser(char *string, int i, va_list arguments)
     j += check_for_width(string, i + j, arguments);
     j += check_for_precision(string, i + j, arguments);
     flag_managment(string, i + j, arguments);
-
 	return (j);
 
 }
@@ -70,5 +69,6 @@ int ft_printf(const char *format, ...)
 		i++;
 	}
 	va_end(arguments);
+	//printf("\n length of j: %d\n", j);
 	return (modifier.length + j);
 }

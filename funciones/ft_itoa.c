@@ -1,10 +1,12 @@
-#include "printf_lib.h"
+#include "../printf_lib.h"
 
  int	len(long number)
 {
 	int len;
 
 	len = 0;
+	if (number == 0)
+		return (1);
 	if (number < 0)
 	{
 		number = number * -1;

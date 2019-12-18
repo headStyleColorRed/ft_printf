@@ -44,6 +44,7 @@ typedef struct node
     int is_negative;
     int is_ptr;
     int is_hex;
+    int is_num;
 
 } Wordifiers;
 
@@ -82,6 +83,8 @@ void initialize_struct();
 void	*ft_calloc(size_t nitems, size_t size);
 int		ft_strlen(char *str);
 int		ft_strcpy(char *dest, char *src);
+void print_nulls(char *string);
+int		ft_isalnum(int c);
 void print_modifiers();             //  B O R R A R
 
 // Modifiers Handlers
