@@ -47,6 +47,13 @@ void print_d(int num)
 
 
     wordifier.length = len(num);
+        //printf("len: %d;\n", wordifier.length);
+    if ((modifier.precision >= wordifier.length) && modifier.width > (modifier.precision + wordifier.length))
+    {
+        modifier.flags = 2;
+    }
+
+
     if (num < 0) 
     {
         wordifier.is_negative = 1;

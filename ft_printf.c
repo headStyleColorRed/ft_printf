@@ -69,6 +69,5 @@ int ft_printf(const char *format, ...)
 		i++;
 	}
 	va_end(arguments);
-	//printf("\n length of j: %d\n", j);
 	return (modifier.length + j);
 }
