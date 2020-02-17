@@ -1,5 +1,7 @@
 #include "printf_lib.h"
 
+
+
 void print_c(int character)
 {
     wordifier.length = 1;
@@ -45,16 +47,13 @@ void print_d(int num)
         modifier.flags = 2;
     }
 
-
     wordifier.length = len(num);
-        //printf("len: %d;\n", wordifier.length);
-    if ((modifier.precision >= wordifier.length) && modifier.width > (modifier.precision + wordifier.length))
-    {
+    if ((modifier.precision >= wordifier.length) && modifier.precision != 1111 && modifier.flags == 1)
+        modifier.flags = 3;
+    else if ((modifier.precision >= wordifier.length) && modifier.precision != 1111)
         modifier.flags = 2;
-    }
 
-
-    if (num < 0) 
+    if (num < 0)
     {
         wordifier.is_negative = 1;
         num *= -1;
@@ -63,7 +62,7 @@ void print_d(int num)
     number = ft_itoa(num);
     if (wordifier.is_negative && modifier.flags != 2)
         write(1, "-", 1);
-    while (number[i] != '\0' && i < wordifier.length)
+    while (number[i] != '\0' && i < wordifier.length && !onlyAZeroException(num))
         write(1, &number[i++], 1);
     handle_flags(2);
     modifier.length += wordifier.length;

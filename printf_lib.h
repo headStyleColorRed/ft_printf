@@ -85,6 +85,7 @@ int		ft_strlen(char *str);
 int		ft_strcpy(char *dest, char *src);
 void print_nulls(char *string);
 int		ft_isalnum(int c);
+int onlyAZeroException(int num);
 void print_modifiers();             //  B O R R A R
 
 // Modifiers Handlers
