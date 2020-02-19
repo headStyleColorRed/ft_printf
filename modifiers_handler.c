@@ -44,8 +44,8 @@ void added_flag()
         {
             if (zeros_to_write > wordifier.length)
             {
-            if (wordifier.is_negative)
-                spaces_to_write--;
+                if (wordifier.is_negative)
+                    spaces_to_write--;
                 print_spaces(spaces_to_write - zeros_to_write);
                 result += spaces_to_write - zeros_to_write;
             }

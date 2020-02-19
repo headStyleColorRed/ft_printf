@@ -103,3 +103,64 @@ int onlyAZeroException(int num)
     }
     return (0);
 }
+
+
+void pre_handle_flags_integer(int *num)
+{
+    wordifier.is_num = 1;
+    if (modifier.width == 0 && modifier.precision != 1111 && modifier.flags == 0)
+    {
+        modifier.width = modifier.precision;
+        modifier.flags = 2;
+    }
+
+    wordifier.length = len(*num);
+    if ((modifier.precision >= wordifier.length) && modifier.precision != 1111 && modifier.flags == 1)
+        modifier.flags = 3;
+    else if ((modifier.precision >= wordifier.length) && modifier.precision != 1111)
+        modifier.flags = 2;
+
+    if (*num < 0)
+    {
+        wordifier.is_negative = 1;
+        *num *= -1;
+    }
+}
+
+void pre_handle_flags_hexadecimal(char *str)
+{
+    wordifier.is_num = 1;
+    if (modifier.width == 0 && modifier.precision != 1111 && modifier.flags == 0)
+    {
+        modifier.width = modifier.precision;
+        modifier.flags = 2;
+    }
+
+    wordifier.length = ft_strlen(str);
+    if ((modifier.precision >= wordifier.length) && modifier.precision != 1111 && modifier.flags == 1)
+        modifier.flags = 3;
+    else if ((modifier.precision >= wordifier.length) && modifier.precision != 1111)
+        modifier.flags = 2;
+}
+
+void pre_handle_flags_unsigned(unsigned int *num)
+{
+    wordifier.is_num = 1;
+    if (modifier.width == 0 && modifier.precision != 1111 && modifier.flags == 0)
+    {
+        modifier.width = modifier.precision;
+        modifier.flags = 2;
+    }
+
+    wordifier.length = len(*num);
+    if ((modifier.precision >= wordifier.length) && modifier.precision != 1111 && modifier.flags == 1)
+        modifier.flags = 3;
+    else if ((modifier.precision >= wordifier.length) && modifier.precision != 1111)
+        modifier.flags = 2;
+
+    if (*num < 0)
+    {
+        wordifier.is_negative = 1;
+        *num *= -1;
+    }
+}
