@@ -49,6 +49,7 @@ void print_d(int num)
         write(1, &number[i++], 1);
     handle_flags(2);
     modifier.length += wordifier.length;
+	free(number);
 }
 
 void print_u(unsigned int num)

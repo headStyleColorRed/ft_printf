@@ -70,5 +70,6 @@ int ft_putnbr_base(unsigned long long int nbr, int base_type)
 		print_unmodified_s(final_number);
 	else
 		print_s(final_number);
+	free(final_number);
 	return (z);
 }
