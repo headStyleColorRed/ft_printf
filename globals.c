@@ -1,4 +1,4 @@
-5//
+//
 //  globals.c
 //  ft_printf
 //

@@ -89,6 +89,7 @@ int onlyAZeroException(int num);
 void pre_handle_flags_integer(int *num);
 void pre_handle_flags_hexadecimal(char *str);
 void pre_handle_flags_unsigned(unsigned int *num);
+int	ft_strncmp(char *s1, char *s2, unsigned int n);
 void print_modifiers();             //  B O R R A R
 
 // Modifiers Handlers
