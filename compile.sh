@@ -1,1 +1,11 @@
-gcc -Wall -Wextra -Werror main.c ft_printf.c checkers.c funciones/ft_itoa.c  printf_lib.h funciones/extras.c machines.c funciones/ft_atoi.c printers_1.c modifiers_handler.c funciones/ft_u_itoa.c funciones/ft_putnbr_base.c && ./a.out
+gcc -Wall -Wextra -Werror main.c \
+						ft_printf.c checkers.c \
+						funciones/ft_itoa.c  \
+						funciones/extras.c \
+						machines.c \
+						funciones/ft_atoi.c \
+						printers_1.c \
+						modifiers_handler.c \
+						funciones/ft_u_itoa.c \
+						funciones/ft_putnbr_base.c && \
+./a.out

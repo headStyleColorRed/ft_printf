@@ -29,23 +29,22 @@ void print_modifiers()
 	printf("+++++++++++++++++++++++++++++++++++++++++++++\n");
 }
 
-void *ft_calloc(size_t nitems, size_t size)
+void	*ft_calloc(size_t count, size_t size)
 {
-	void *result;
-	size_t i;
+	char			*dst;
+	unsigned int	total;
+	unsigned int	i;
 
+	total = count * size;
+	if (!(dst = malloc(total)))
+		return (NULL);
 	i = 0;
-	if (nitems == 0 || size == 0)
-		return (NULL);
-	result = malloc(size * nitems);
-	if (result == NULL)
-		return (NULL);
-	while (i <= nitems)
+	while (total--)
 	{
-		((char *)result)[i] = 0;
+		dst[i] = 0;
 		i++;
 	}
-	return (result);
+	return ((void *)dst);
 }
 
 int ft_strlen(char *str)

@@ -4,7 +4,7 @@ int width_counter_machine(char *string, int i)
 {
 	char *spaces_string;
 	int j;
-	spaces_string = (char *)ft_calloc(5, 1);
+	spaces_string = (char *)ft_calloc(5, sizeof(char));
 	j = 0;
 	while (string[i] >= 48 && string[i] <= 57)
 		spaces_string[j++] = string[i++];
@@ -18,7 +18,7 @@ int precision_counter_machine(char *string, int i)
 	char *dots_string;
 	int j;
 
-	dots_string = (char *)ft_calloc(5, 1);
+	dots_string = (char *)ft_calloc(5, sizeof(char));
 	j = 0;
 	while (string[i] >= 48 && string[i] <= 57)
 		dots_string[j++] = string[i++];
