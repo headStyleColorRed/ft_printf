@@ -33,12 +33,26 @@ int manage_wildcard(long num, int option)
 {
 	if (option == 1)
     {
+		if (num < 0)
+		{
+			num *= -1;
+			modifier.flags = 1;
+			modifier.to_modifie = 1;
+		}
 	    modifier.width = num;
 	    return (1);
     }
     else
     {
-	    modifier.precision = num;
+		if (num < 0)
+		{
+			num *= -1;
+			modifier.flags = 1;
+			modifier.to_modifie = 1;
+	    	modifier.width = num;
+		}
+		else 
+	    	modifier.precision = num;
 	    return (2);
     }
     
