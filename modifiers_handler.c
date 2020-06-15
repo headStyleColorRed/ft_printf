@@ -58,7 +58,6 @@ void added_flag()
         if (modifier.precision != 1111)
         {
             zeros_to_write = modifier.precision - wordifier.length;
-            //printf("zeros_to_write: %d;\n", zeros_to_write);
             if (wordifier.is_negative)
             {
                 write(1, "-", 1);
@@ -74,7 +73,6 @@ void added_flag()
         else
         {
             zeros_to_write = modifier.width - wordifier.length;
-            // printf("zeros_to_write: %d;\n", zeros_to_write);
             if (wordifier.is_negative)
             {
                 write(1, "-", 1);
@@ -110,7 +108,6 @@ void added_flag()
 // Option 2 -> After printing;
 int handle_flags(int option)
 {
-    //print_modifiers();
     if (option == 1)
     {
         if (modifier.flags != 0)

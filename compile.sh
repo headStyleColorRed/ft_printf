@@ -1,4 +1,4 @@
-gcc -Wall -Wextra -Werror main.c \
+gcc -g -Wall -Wextra -Werror main.c \
 						ft_printf.c checkers.c \
 						funciones/ft_itoa.c  \
 						funciones/extras.c \

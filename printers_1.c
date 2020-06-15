@@ -43,7 +43,7 @@ void print_d(int num)
 
     handle_flags(1);
     number = ft_itoa(num);
-    if (wordifier.is_negative && modifier.flags != 2)
+    if (wordifier.is_negative && modifier.flags != 2 && number[0] != '-')
         write(1, "-", 1);
     while (number[i] != '\0' && i < wordifier.length && !onlyAZeroException(num))
         write(1, &number[i++], 1);
