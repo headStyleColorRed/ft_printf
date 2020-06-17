@@ -8,7 +8,7 @@ int width_counter_machine(char *string, int i)
 	j = 0;
 	while (string[i] >= 48 && string[i] <= 57)
 		spaces_string[j++] = string[i++];
-	modifier.width = ft_atoi(spaces_string);
+	set_modifier(type_width, ft_atoi(spaces_string));
 	free(spaces_string);
 	return (j);
 }
@@ -23,7 +23,7 @@ int precision_counter_machine(char *string, int i)
 	while (string[i] >= 48 && string[i] <= 57)
 		dots_string[j++] = string[i++];
 
-	modifier.precision = ft_atoi(dots_string);
+	set_modifier(type_precision, ft_atoi(dots_string));
 	free(dots_string);
 	return (j + 1);
 	
@@ -36,10 +36,10 @@ int manage_wildcard(long num, int option)
 		if (num < 0)
 		{
 			num *= -1;
-			modifier.flags = 1;
-			modifier.to_modifie = 1;
+			set_modifier(type_flags, 1);
+			set_modifier(type_to_modifie, 1);
 		}
-	    modifier.width = num;
+		set_modifier(type_width, num);
 	    return (1);
     }
     else
@@ -47,12 +47,12 @@ int manage_wildcard(long num, int option)
 		if (num < 0)
 		{
 			num *= -1;
-			modifier.flags = 1;
-			modifier.to_modifie = 1;
-	    	modifier.width = num;
+			set_modifier(type_flags, 1);
+			set_modifier(type_to_modifie, 1);
+			set_modifier(type_width, num);
 		}
 		else 
-	    	modifier.precision = num;
+			set_modifier(type_precision, num);
 	    return (2);
     }
     

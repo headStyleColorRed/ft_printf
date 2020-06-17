@@ -26,30 +26,20 @@
         - 1 (yes)               - 0 (no)
 */
 
-typedef struct Node
+typedef enum e_printType 
 {
-    int flags;
-    int width;
-    int precision;
-    char specifier;
-    int length;
-    int to_modifie;
-
-} Modifiers;
-
-
-typedef struct node
-{
-    int length;
-    int is_negative;
-    int is_ptr;
-    int is_hex;
-    int is_num;
-
-} Wordifiers;
-
-Modifiers modifier;
-Wordifiers wordifier;
+	type_flags,
+	type_width,
+	type_precision,
+	type_specifier,
+	type_length,
+	type_to_modifie,
+	type_w_length,
+	type_is_negative,
+	type_is_ptr,
+	type_is_hex,
+	type_is_num,
+}			e_type;
 
 // Main Functions
 int ft_printf(const char *, ...);
@@ -79,7 +69,6 @@ void print_unknown(char unknown);
 int print_unmodified_s(char *string);
 
 // Extras
-void initialize_struct();
 void	*ft_calloc(size_t nitems, size_t size);
 int		ft_strlen(char *str);
 int		ft_strcpy(char *dest, char *src);
@@ -90,7 +79,6 @@ void pre_handle_flags_integer(int *num);
 void pre_handle_flags_hexadecimal(char *str);
 void pre_handle_flags_unsigned(unsigned int *num);
 int	ft_strncmp(char *s1, char *s2, unsigned int n);
-void print_modifiers();             //  B O R R A R
 
 // Modifiers Handlers
 int handle_flags(int option);
@@ -105,11 +93,12 @@ int	len(long number);
 // Globals
 void	initialize_globals(void);
 void	getModifiers(void);
-void	add_to_length(char *str, int amount);
-int		get_wordifier(char *str);
-int		get_modifier(char *str);
-void	set_wordifier(char *str, int amount);
-void	set_modifier(char *str, int amount, char spec);
+void	add_to_length(int e_printType, int amount);
+int		get_wordifier(int e_printType);
+int		get_modifier(int e_printType);
+void	set_wordifier(int e_printType, int amount);
+void	set_modifier(int e_printType, int amount);
+void	substract_to_length(int e_printType, int amount);
 
 int	ft_atoi(const char *str);
 

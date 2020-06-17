@@ -57,7 +57,7 @@ int ft_putnbr_base(unsigned long long int nbr, int base_type)
 		nbr = nbr / size_base;
 	}
 	z = 0;
-	if (wordifier.is_ptr == 1)
+	if (get_wordifier(type_is_ptr) == 1)
 	{
 		final_number[0] = '0';
 		final_number[1] = 'x';
@@ -66,7 +66,7 @@ int ft_putnbr_base(unsigned long long int nbr, int base_type)
 
 	while (--i >= 0)
 		final_number[z++] = base[nbr_final[i]];
-	if (wordifier.is_hex == 1)
+	if (get_wordifier(type_is_hex) == 1)
 		print_unmodified_s(final_number);
 	else
 		print_s(final_number);
