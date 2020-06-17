@@ -46,8 +46,8 @@ int ft_printf(const char *format, ...)
 	char *string;
 	va_list arguments;
 	int j;
-
-	modifier.length = 0;
+	
+	set_modifier("length", 0, '0');
 	va_start(arguments, format);
 	string = (char *)format;
 	counter = 0;
@@ -69,5 +69,6 @@ int ft_printf(const char *format, ...)
 		i++;
 	}
 	va_end(arguments);
-	return (modifier.length + j);
+	add_to_length("length", j);
+	return (get_modifier("length"));
 }
