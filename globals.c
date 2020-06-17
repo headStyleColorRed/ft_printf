@@ -133,5 +133,5 @@ void substract_to_length(int e_printType, int amount)
     if (e_printType == type_width)
         width -= amount;
     else if (e_printType == type_length)
-        length += amount;
+        length -= amount;
 }

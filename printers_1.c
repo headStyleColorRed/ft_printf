@@ -16,7 +16,6 @@ void print_s(char *string)
 
     if (string)
     {
-
         i = 0;
         if (get_modifier(type_precision) != 1111 && get_modifier(type_precision) < ft_strlen(string))
             set_wordifier(type_w_length, get_modifier(type_precision));

@@ -7,7 +7,7 @@ void no_flags()
 
     i = 0;
     minus_counter = get_modifier(type_width);
-    while (minus_counter-- > get_wordifier(type_length))
+    while (minus_counter-- > get_wordifier(type_w_length))
     {
         write(1, " ", 1);
         i++;

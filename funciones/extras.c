@@ -107,7 +107,7 @@ void pre_handle_flags_hexadecimal(char *str)
 
     }
 
-	set_wordifier(type_length, ft_strlen(str));
+	set_wordifier(type_w_length, ft_strlen(str));
     if ((get_modifier(type_precision) >= get_wordifier(type_w_length)) && get_modifier(type_precision) != 1111 && get_modifier(type_flags) == 1)
         set_modifier(type_flags, 3);
     else if ((get_modifier(type_precision) >= get_wordifier(type_w_length)) && get_modifier(type_precision) != 1111)
