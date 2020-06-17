@@ -102,6 +102,15 @@ int ft_putnbr_base(unsigned long long int nbr, int base_type);
 int	len(long number);
 
 
+// Globals
+void	initialize_globals(void);
+void	getModifiers(void);
+void	add_to_length(char *str, int amount);
+int		get_wordifier(char *str);
+int		get_modifier(char *str);
+void	set_wordifier(char *str, int amount);
+void	set_modifier(char *str, int amount, char spec);
+
 int	ft_atoi(const char *str);
 
 #endif
