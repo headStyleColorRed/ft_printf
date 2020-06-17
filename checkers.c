@@ -4,11 +4,11 @@ int check_for_flags(char *string, int i)
 {
     if (string[i] == '-')
     {
-        modifier.flags = 1;
-        modifier.to_modifie = 1;
+		set_modifier("flags", 1, "0");
+		set_modifier("to_modifie", 1, "0");
     }
     else if(string[i] == '0')
-        modifier.flags = 2;
+		set_modifier("flags", 2, "0");
     else
         return (0);
     return (1);

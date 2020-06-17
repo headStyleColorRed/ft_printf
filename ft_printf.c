@@ -30,7 +30,7 @@ int string_parser(char *string, int i, va_list arguments)
 	int j;
 	
 	j = 0;
-	initialize_struct();
+	initialize_globals();
     j +=check_for_flags(string, i);
     j += check_for_width(string, i + j, arguments);
     j += check_for_precision(string, i + j, arguments);
