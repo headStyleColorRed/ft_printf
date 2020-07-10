@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rlabrado <headstylecolorred@gmail.com>     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/07/10 22:18:35 by rlabrado          #+#    #+#             */
+/*   Updated: 2020/07/10 22:31:06 by rlabrado         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "printf_lib.h"
 
-int flag_managment(char *string, int i, va_list arguments)
+int		flag_managment(char *string, int i, va_list arguments)
 {
 	if (string[i] == 'c')
 		print_c(va_arg(arguments, int));
@@ -25,31 +37,25 @@ int flag_managment(char *string, int i, va_list arguments)
 	return (0);
 }
 
-int string_parser(char *string, int i, va_list arguments)
+int		string_parser(char *string, int i, va_list arguments)
 {
 	int j;
-	
+
 	j = 0;
 	initialize_globals();
-    j +=check_for_flags(string, i);
-    j += check_for_width(string, i + j, arguments);
-    j += check_for_precision(string, i + j, arguments);
-    flag_managment(string, i + j, arguments);
+	j += check_for_flags(string, i);
+	j += check_for_width(string, i + j, arguments);
+	j += check_for_precision(string, i + j, arguments);
+	flag_managment(string, i + j, arguments);
 	return (j);
-
 }
 
-int ft_printf(const char *format, ...)
+int		string_reader(char *string, va_list arguments)
 {
-	int i;
-	int counter;
-	char *string;
-	va_list arguments;
-	int j;
-	
-	set_modifier(type_length, 0);
-	va_start(arguments, format);
-	string = (char *)format;
+	int		i;
+	int		j;
+	int		counter;
+
 	counter = 0;
 	i = 0;
 	j = 0;
@@ -68,7 +74,18 @@ int ft_printf(const char *format, ...)
 		}
 		i++;
 	}
+	return (j);
+}
+
+int		ft_printf(const char *format, ...)
+{
+	char		*string;
+	va_list		arguments;
+
+	set_modifier(type_length, 0);
+	va_start(arguments, format);
+	string = (char *)format;
 	va_end(arguments);
-	add_to_length(type_length, j);
+	add_to_length(type_length, string_reader(string, arguments));
 	return (get_modifier(type_length));
 }
