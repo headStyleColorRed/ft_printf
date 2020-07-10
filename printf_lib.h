@@ -100,6 +100,12 @@ int	ft_strncmp(char *s1, char *s2, unsigned int n);
 
 // Modifiers Handlers
 int handle_flags(int option);
+void print_spaces(int spaces_to_write);
+
+// Flag Handlers
+int handler_zero_flag();
+int flag_one_handler();
+int flag_two_handler();
 
 // Alone files
 char		*ft_itoa(int number);
