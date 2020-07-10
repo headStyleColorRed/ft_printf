@@ -1,3 +1,14 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rlabrado <headstylecolorred@gmail.com>     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/07/10 21:43:42 by rlabrado          #+#    #+#             */
+/*   Updated: 2020/07/10 21:44:18 by rlabrado         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "../printf_lib.h"
 
@@ -8,7 +19,7 @@ int		ft_isdigit(int c)
 	return (0);
 }
 
-int	ft_atoi(const char *str)
+int		ft_atoi(const char *str)
 {
 	int			is_neg;
 	long int	val;
