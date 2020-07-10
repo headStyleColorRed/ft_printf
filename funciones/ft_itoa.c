@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rlabrado <headstylecolorred@gmail.com>     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/07/10 21:45:16 by rlabrado          #+#    #+#             */
+/*   Updated: 2020/07/10 21:45:19 by rlabrado         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../printf_lib.h"
 
- int	len(long number)
+int		len(long number)
 {
 	int len;
 
@@ -20,13 +32,13 @@
 	return (len);
 }
 
- int	writer(char *str)
+int		writer(char *str)
 {
 	str[0] = 48;
 	return (1);
 }
 
-char		*ft_itoa(int number)
+char	*ft_itoa(int number)
 {
 	char	*str;
 	long	n;
