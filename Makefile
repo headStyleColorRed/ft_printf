@@ -8,7 +8,9 @@ SRC =		ft_printf.c \
 			funciones/extras.c \
 			machines.c \
 			funciones/ft_atoi.c \
-			printers_1.c \
+			printers_text.c \
+			printers_number.c \
+			printers_rest.c \
 			globals.c \
 			global_get_set.c \
 			modifiers_handler.c \
