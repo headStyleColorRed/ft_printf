@@ -6,13 +6,13 @@
 /*   By: rlabrado <headstylecolorred@gmail.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/10 22:37:19 by rlabrado          #+#    #+#             */
-/*   Updated: 2020/07/10 22:50:31 by rlabrado         ###   ########.fr       */
+/*   Updated: 2020/07/10 22:52:19 by rlabrado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf_lib.h"
 
-void set_modifier(int e_print_type, int amount)
+void	set_modifier(int e_print_type, int amount)
 {
 	if (e_print_type == type_flags)
 		global_variables.flags = amount;
@@ -28,7 +28,7 @@ void set_modifier(int e_print_type, int amount)
 		global_variables.to_modifie = amount;
 }
 
-void set_wordifier(int e_print_type, int amount)
+void	set_wordifier(int e_print_type, int amount)
 {
 	if (e_print_type == type_w_length)
 		global_variables.w_length = amount;
@@ -42,7 +42,7 @@ void set_wordifier(int e_print_type, int amount)
 		global_variables.is_num = amount;
 }
 
-int get_modifier(int e_print_type)
+int		get_modifier(int e_print_type)
 {
 	if (e_print_type == type_flags)
 		return (global_variables.flags);
@@ -57,10 +57,10 @@ int get_modifier(int e_print_type)
 	else if (e_print_type == type_to_modifie)
 		return (global_variables.to_modifie);
 	else
-		return 0;
+		return (0);
 }
 
-int get_wordifier(int e_print_type)
+int		get_wordifier(int e_print_type)
 {
 	if (e_print_type == type_w_length)
 		return (global_variables.w_length);
@@ -73,5 +73,5 @@ int get_wordifier(int e_print_type)
 	else if (e_print_type == type_is_num)
 		return (global_variables.is_num);
 	else
-		return 0;
+		return (0);
 }
