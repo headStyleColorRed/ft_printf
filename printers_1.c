@@ -44,7 +44,7 @@ void print_d(int num)
     number = ft_itoa(num);
     if (get_wordifier(type_is_negative) && get_modifier(type_flags) != 2 && number[0] != '-')
         write(1, "-", 1);
-    while (number[i] != '\0' && i < get_wordifier(type_w_length) && !onlyAZeroException(num))
+    while (number[i] != '\0' && i < get_wordifier(type_w_length) && !only_zero_exception(num))
         write(1, &number[i++], 1);
     handle_flags(2);
 	add_to_length(type_length, get_wordifier(type_w_length));
@@ -63,7 +63,7 @@ void print_u(unsigned int num)
     number = ft_u_itoa(num);
     if (get_wordifier(type_is_negative) && get_modifier(type_flags) != 2)
         write(1, "-", 1);
-    while (number[i] != '\0' && i < get_wordifier(type_w_length) && i < get_wordifier(type_w_length) && !onlyAZeroException(num))
+    while (number[i] != '\0' && i < get_wordifier(type_w_length) && i < get_wordifier(type_w_length) && !only_zero_exception(num))
         write(1, &number[i++], 1);
     handle_flags(2);
 	add_to_length(type_length, get_wordifier(type_w_length));

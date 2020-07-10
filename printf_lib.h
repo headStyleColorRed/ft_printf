@@ -74,7 +74,7 @@ int		ft_strlen(char *str);
 int		ft_strcpy(char *dest, char *src);
 void print_nulls(char *string);
 int		ft_isalnum(int c);
-int onlyAZeroException(int num);
+int only_zero_exception(int num);
 void pre_handle_flags_integer(int *num);
 void pre_handle_flags_hexadecimal(char *str);
 void pre_handle_flags_unsigned(unsigned int *num);
