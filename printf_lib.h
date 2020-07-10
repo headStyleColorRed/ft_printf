@@ -86,7 +86,7 @@ int handle_flags(int option);
 // Alone files
 char		*ft_itoa(int number);
 char		*ft_u_itoa(unsigned int number);
-int ft_putnbr_base(unsigned long long int nbr, int base_type);
+int		ft_putnbr_base(unsigned long long int nbr, char *base);
 int	len(long number);
 
 

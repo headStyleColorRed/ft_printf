@@ -72,14 +72,14 @@ void print_u(unsigned int num)
 int print_x(int num)
 {
 	set_wordifier(type_is_hex, 1);
-    ft_putnbr_base(num, 1);
+    ft_putnbr_base(num, "0123456789abcdef");
     return (0);
 }
 
 int print_X(int num)
 {
 	set_wordifier(type_is_hex, 1);
-    ft_putnbr_base(num, 2);
+    ft_putnbr_base(num, "0123456789ABCDEF");
     return (0);
 }
 
@@ -90,7 +90,7 @@ void print_p(unsigned long int num)
     else
     {
 		set_wordifier(type_is_ptr, 1);
-        ft_putnbr_base(num, 1);
+        ft_putnbr_base(num, "0123456789abcdef");
     }
 }
 

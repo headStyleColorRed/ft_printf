@@ -1,12 +1,23 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putnbr_base.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rlabrado <headstylecolorred@gmail.com>     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/07/10 21:46:19 by rlabrado          #+#    #+#             */
+/*   Updated: 2020/07/10 22:08:17 by rlabrado         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../printf_lib.h"
 
-
-void ft_putchar(char c)
+void	ft_putchar(char c)
 {
 	write(1, &c, 1);
 }
 
-int check_base(char *base)
+int		check_base(char *base)
 {
 	int i;
 	int z;
@@ -33,21 +44,27 @@ int check_base(char *base)
 	return (1);
 }
 
-int ft_putnbr_base(unsigned long long int nbr, int base_type)
+int		is_type_ptr(char *final_number)
 {
-	char *base;
-	char *final_number;
-	int size_base;
-	int nbr_final[100];
-	int i;
-	int z;
-	if (base_type == 1)
-		base = "0123456789abcdef";
-	else
-		base = "0123456789ABCDEF";
+	if (get_wordifier(type_is_ptr) == 1)
+	{
+		final_number[0] = '0';
+		final_number[1] = 'x';
+		return (2);
+	}
+	return (0);
+}
+
+int		ft_putnbr_base(unsigned long long int nbr, char *base)
+{
+	char	*final_number;
+	int		size_base;
+	int		nbr_final[100];
+	int		i;
+	int		z;
+
 	i = 0;
 	size_base = 0;
-
 	final_number = ft_calloc(50, 1);
 	while (base[size_base])
 		size_base++;
@@ -56,14 +73,7 @@ int ft_putnbr_base(unsigned long long int nbr, int base_type)
 		nbr_final[i++] = nbr % size_base;
 		nbr = nbr / size_base;
 	}
-	z = 0;
-	if (get_wordifier(type_is_ptr) == 1)
-	{
-		final_number[0] = '0';
-		final_number[1] = 'x';
-		z += 2;
-	}
-
+	z = is_type_ptr(final_number);
 	while (--i >= 0)
 		final_number[z++] = base[nbr_final[i]];
 	if (get_wordifier(type_is_hex) == 1)
