@@ -10,6 +10,7 @@ SRC =		ft_printf.c \
 			funciones/ft_atoi.c \
 			printers_1.c \
 			globals.c \
+			global_get_set.c \
 			modifiers_handler.c \
 			funciones/ft_u_itoa.c \
 			funciones/prehandlers.c \

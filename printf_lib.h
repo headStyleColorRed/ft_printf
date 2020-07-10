@@ -26,7 +26,7 @@
         - 1 (yes)               - 0 (no)
 */
 
-typedef enum e_printType 
+typedef enum e_print_type 
 {
 	type_flags,
 	type_width,
@@ -40,6 +40,24 @@ typedef enum e_printType
 	type_is_hex,
 	type_is_num,
 }			e_type;
+
+typedef struct 	s_globals
+{
+	int flags;	
+	int width;
+	int precision;
+	int specifier;
+	int length;
+	int to_modifie;
+	int w_length;
+	int is_negative;
+	int is_ptr;
+	int is_hex;
+	int is_num;
+}				t_globals;
+
+t_globals global_variables;
+
 
 // Main Functions
 int ft_printf(const char *, ...);
@@ -92,13 +110,12 @@ int	len(long number);
 
 // Globals
 void	initialize_globals(void);
-void	getModifiers(void);
-void	add_to_length(int e_printType, int amount);
-int		get_wordifier(int e_printType);
-int		get_modifier(int e_printType);
-void	set_wordifier(int e_printType, int amount);
-void	set_modifier(int e_printType, int amount);
-void	substract_to_length(int e_printType, int amount);
+void	add_to_length(int e_print_type, int amount);
+int		get_wordifier(int e_print_type);
+int		get_modifier(int e_print_type);
+void	set_wordifier(int e_print_type, int amount);
+void	set_modifier(int e_print_type, int amount);
+void	substract_to_length(int e_print_type, int amount);
 
 int	ft_atoi(const char *str);
 
