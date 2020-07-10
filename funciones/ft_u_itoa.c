@@ -1,11 +1,21 @@
-#include "../printf_lib.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_u_itoa.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rlabrado <headstylecolorred@gmail.com>     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/07/10 22:09:49 by rlabrado          #+#    #+#             */
+/*   Updated: 2020/07/10 22:10:21 by rlabrado         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
+#include "../printf_lib.h"
 
 static int	u_len(unsigned long int number)
 {
-
 	long long int	n;
-	int len;
+	int				len;
 
 	n = number;
 	len = 0;
@@ -30,9 +40,9 @@ static int	writer(char *str)
 
 char		*ft_u_itoa(unsigned int number)
 {
-	char	*str;
+	char			*str;
 	long long int	n;
-	int		i;
+	int				i;
 
 	n = number;
 	i = u_len(n);
