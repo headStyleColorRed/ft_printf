@@ -1,32 +1,43 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   printf_lib.h                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rlabrado <headstylecolorred@gmail.com>     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/07/10 23:39:37 by rlabrado          #+#    #+#             */
+/*   Updated: 2020/07/10 23:45:06 by rlabrado         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #ifndef PRINTF_LIB_H
-#define PRINTF_LIB_H
+# define PRINTF_LIB_H
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <unistd.h>
-#include <stdarg.h>
+# include <stdio.h>
+# include <stdlib.h>
+# include <unistd.h>
+# include <stdarg.h>
 
 /*
-    M O D E L  ---> %[flags][width][.precision][length]specifier
-
-    Flags:
-        - 1 (-)                 - 2 (0)
-
-    Width:
-        -  * -> (integer)       - integer
-
-    Precision:
-        - integer               - * -> (integer)
-
-    Specifier:
-        - %c    - %s    - %p    - %d    - %i
-        - %u    - %x    - %X     - %%
-    To Modifie:
-        - 1 (yes)               - 0 (no)
+**    M O D E L  ---> %[flags][width][.precision][length]specifier
+**
+**    Flags:
+**        - 1 (-)                 - 2 (0)
+**
+**    Width:
+**        -  * -> (integer)       - integer
+**
+**    Precision:
+**        - integer               - * -> (integer)
+**
+**    Specifier:
+**        - %c    - %s    - %p    - %d    - %i
+**        - %u    - %x    - %X     - %%
+**    To Modifie:
+**        - 1 (yes)               - 0 (no)
 */
 
-typedef enum e_print_type 
+typedef enum	e_print_type
 {
 	type_flags,
 	type_width,
@@ -39,7 +50,7 @@ typedef enum e_print_type
 	type_is_ptr,
 	type_is_hex,
 	type_is_num,
-}			e_type;
+}				t_type;
 
 typedef struct 	s_globals
 {
