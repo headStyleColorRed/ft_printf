@@ -80,7 +80,7 @@ void print_s(char *string);
 void print_d(int num);
 void print_u(unsigned int num);
 int print_x(int num);
-int print_X(int num);
+int print_big_x(int num);
 void print_p( unsigned long int num);
 void print_percent(void);
 void print_unknown(char unknown);

@@ -6,7 +6,7 @@
 /*   By: rlabrado <headstylecolorred@gmail.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/10 22:18:35 by rlabrado          #+#    #+#             */
-/*   Updated: 2020/07/10 22:31:06 by rlabrado         ###   ########.fr       */
+/*   Updated: 2020/07/10 23:38:35 by rlabrado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int		flag_managment(char *string, int i, va_list arguments)
 	else if (string[i] == 'x')
 		print_x(va_arg(arguments, int));
 	else if (string[i] == 'X')
-		print_X(va_arg(arguments, int));
+		print_big_x(va_arg(arguments, int));
 	else if (string[i] == 'p')
 		print_p(va_arg(arguments, unsigned long int));
 	else if (string[i] == '%')
