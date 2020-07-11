@@ -6,7 +6,7 @@
 /*   By: rlabrado <headstylecolorred@gmail.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/10 22:18:35 by rlabrado          #+#    #+#             */
-/*   Updated: 2020/07/10 23:38:35 by rlabrado         ###   ########.fr       */
+/*   Updated: 2020/07/11 20:49:23 by rlabrado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,9 +83,15 @@ int		ft_printf(const char *format, ...)
 	va_list		arguments;
 
 	set_modifier(type_length, 0);
-	va_start(arguments, format);
 	string = (char *)format;
+	
+	va_start(arguments, format);
+	if (format_checker_manager(string, arguments) >= 600)
+		return (-1);
 	va_end(arguments);
+
+	va_start(arguments, format);
 	add_to_length(type_length, string_reader(string, arguments));
+	va_end(arguments);
 	return (get_modifier(type_length));
 }

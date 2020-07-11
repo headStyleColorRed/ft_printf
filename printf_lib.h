@@ -6,7 +6,7 @@
 /*   By: rlabrado <headstylecolorred@gmail.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/10 23:39:37 by rlabrado          #+#    #+#             */
-/*   Updated: 2020/07/11 19:17:59 by rlabrado         ###   ########.fr       */
+/*   Updated: 2020/07/11 23:19:52 by rlabrado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,25 @@
 **    To Modifie:
 **        - 1 (yes)               - 0 (no)
 */
+
+typedef enum 	e_error_manager
+{
+	error_no_specifier = 600,
+}				e_error;
+
+typedef struct	s_parameter_component
+{
+	int		exists;
+	int		number;
+}				t_parameter_component;
+
+typedef struct				s_parameters
+{
+	int 					flag;
+	int					 	width;
+	t_parameter_component 	precision;
+	int 					specifier;
+}							t_parameters;
 
 typedef enum		e_print_type
 {
@@ -139,7 +158,7 @@ int					flag_one_handler();
 int					flag_two_handler();
 
 /*
-**	*	*	Alone files	*	*	**
+**	*	*	Alone files		*	*	**
 */
 
 char				*ft_itoa(int number);
@@ -149,7 +168,7 @@ int					len(long number);
 int					ft_atoi(const char *str);
 
 /*
-**	*	*	Globals	*	*	**
+**	*	*	Globals		*	*	**
 */
 
 void				initialize_globals(void);
@@ -160,4 +179,12 @@ void				set_wordifier(int e_print_type, int amount);
 void				set_modifier(int e_print_type, int amount);
 void				substract_to_length(int e_print_type, int amount);
 
+/*
+**	*	*	undefined_behaviours	*	*	**
+*/
+
+int					format_checker_manager(char *string, va_list arguments);
+int					check_input_string(char *string, int i);
+int					ft_check_if_character(char str, char *characters);
+int					ft_check_if_number(char *string, int i);
 #endif
