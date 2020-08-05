@@ -187,4 +187,6 @@ int					format_checker_manager(char *string, va_list arguments);
 int					check_input_string(char *string, int i);
 int					ft_check_if_character(char str, char *characters);
 int					ft_check_if_number(char *string, int i);
+void				applyChangesToString(char *string, va_list arguments, e_error error_type);
+void				error_writer(char *string);
 #endif
