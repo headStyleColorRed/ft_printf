@@ -6,7 +6,7 @@
 /*   By: rlabrado <headstylecolorred@gmail.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/10 23:39:37 by rlabrado          #+#    #+#             */
-/*   Updated: 2020/07/11 23:19:52 by rlabrado         ###   ########.fr       */
+/*   Updated: 2020/08/05 21:34:32 by rlabrado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@
 typedef enum 	e_error_manager
 {
 	error_no_specifier = 600,
+	error_single_percentage
 }				e_error;
 
 typedef struct	s_parameter_component
