@@ -6,7 +6,7 @@
 /*   By: rlabrado <headstylecolorred@gmail.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/10 23:39:37 by rlabrado          #+#    #+#             */
-/*   Updated: 2020/07/11 19:17:59 by rlabrado         ###   ########.fr       */
+/*   Updated: 2020/08/05 21:35:12 by rlabrado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@
 **        - %c    - %s    - %p    - %d    - %i
 **        - %u    - %x    - %X     - %%
 **    To Modifie:
-**        - 1 (yes)               - 0 (no)
+**        - 1 (yes)               - 0 (no)			-3 (after)
 */
 
 typedef enum		e_print_type
