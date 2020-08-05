@@ -8,7 +8,7 @@ int main(void)
 
 	my_total = ft_printf("%");
 	// his_total = printf("%");
-	printf("My  total -> %d\n", my_total);
+	// printf("My  total -> %d\n", my_total);
 	// printf("His total -> %d\n\n", his_total);
 	
 }

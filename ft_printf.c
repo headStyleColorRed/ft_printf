@@ -81,13 +81,18 @@ int		ft_printf(const char *format, ...)
 {
 	char		*string;
 	va_list		arguments;
+	e_error		error_type;
 
 	set_modifier(type_length, 0);
 	string = (char *)format;
 	
 	va_start(arguments, format);
-	if (format_checker_manager(string, arguments) >= 600)
-		return (-1);
+	error_type =format_checker_manager(string, arguments);
+	if (error_type != 0)
+	{
+		applyChangesToString(string, arguments, error_type);
+		return (0);
+	}
 	va_end(arguments);
 
 	va_start(arguments, format);

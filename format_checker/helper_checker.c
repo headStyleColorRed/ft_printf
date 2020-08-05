@@ -35,3 +35,12 @@ int		ft_check_if_number(char *string, int i)
 	width_number[j] = '\0';
 	return(ft_strlen(width_number));
 }
+
+void	error_writer(char *string)
+{
+	int	i;
+
+	i = 0;
+	while (string[i])
+		write(1, &string[i++], 1);
+}

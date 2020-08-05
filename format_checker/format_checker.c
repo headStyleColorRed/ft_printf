@@ -29,3 +29,12 @@ int		format_checker_manager(char *string, va_list arguments)
 
 	return (0);
 }
+
+void	applyChangesToString(char *string, va_list arguments, e_error error_type)
+{
+	(void) string;
+	(void) arguments;
+
+	if (error_type == error_no_specifier)
+		error_writer(string);
+}
