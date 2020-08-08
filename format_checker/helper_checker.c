@@ -6,7 +6,7 @@
 /*   By: rlabrado <headstylecolorred@gmail.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/11 20:55:01 by rlabrado          #+#    #+#             */
-/*   Updated: 2020/07/11 22:45:11 by rlabrado         ###   ########.fr       */
+/*   Updated: 2020/08/05 22:07:48 by rlabrado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,11 +36,14 @@ int		ft_check_if_number(char *string, int i)
 	return(ft_strlen(width_number));
 }
 
-void	error_writer(char *string)
+int		error_writer(char *string)
 {
 	int	i;
 
 	i = 0;
 	while (string[i])
 		write(1, &string[i++], 1);
+
+	add_to_length(type_length, i);
+	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: rlabrado <headstylecolorred@gmail.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/10 22:18:35 by rlabrado          #+#    #+#             */
-/*   Updated: 2020/07/11 20:49:23 by rlabrado         ###   ########.fr       */
+/*   Updated: 2020/08/05 21:44:05 by rlabrado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,7 +91,7 @@ int		ft_printf(const char *format, ...)
 	if (error_type != 0)
 	{
 		applyChangesToString(string, arguments, error_type);
-		return (0);
+		return (get_modifier(type_length));
 	}
 	va_end(arguments);
 

@@ -6,7 +6,7 @@
 /*   By: rlabrado <headstylecolorred@gmail.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/10 23:39:37 by rlabrado          #+#    #+#             */
-/*   Updated: 2020/08/05 21:34:32 by rlabrado         ###   ########.fr       */
+/*   Updated: 2020/08/05 22:02:33 by rlabrado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,8 @@
 typedef enum 	e_error_manager
 {
 	error_no_specifier = 600,
-	error_single_percentage
+	error_single_percentage,
+	error_percentage_with_precision,
 }				e_error;
 
 typedef struct	s_parameter_component
@@ -52,9 +53,9 @@ typedef struct	s_parameter_component
 typedef struct				s_parameters
 {
 	int 					flag;
-	int					 	width;
+	t_parameter_component	width;
 	t_parameter_component 	precision;
-	int 					specifier;
+	t_parameter_component 	specifier;
 }							t_parameters;
 
 typedef enum		e_print_type
@@ -189,5 +190,5 @@ int					check_input_string(char *string, int i);
 int					ft_check_if_character(char str, char *characters);
 int					ft_check_if_number(char *string, int i);
 void				applyChangesToString(char *string, va_list arguments, e_error error_type);
-void				error_writer(char *string);
+int					error_writer(char *string);
 #endif
