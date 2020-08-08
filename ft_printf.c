@@ -6,7 +6,7 @@
 /*   By: rlabrado <headstylecolorred@gmail.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/10 22:18:35 by rlabrado          #+#    #+#             */
-/*   Updated: 2020/07/10 23:38:35 by rlabrado         ###   ########.fr       */
+/*   Updated: 2020/08/08 15:16:40 by rlabrado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,45 @@ int		flag_managment(char *string, int i, va_list arguments)
 	return (0);
 }
 
+int	check_for_continous_zeros(char *string, int i)
+{
+	int 	j;
+	int 	number_of_zeros;
+	int		spaces_to_forward;
+
+	j = 0;
+	number_of_zeros = 0;
+	spaces_to_forward = 0;
+	while (string[i] == '0' || string[i] == '-')
+	{
+		if (string[i++] == '0')
+			number_of_zeros++;
+		spaces_to_forward++;
+	}
+
+	if (number_of_zeros >= 2)
+	{
+		initialize_globals();
+		return spaces_to_forward - 1;
+	}
+	return (0);
+}
+
+int check_string_for_specifier(char *string, int i, int total)
+{
+	int j;
+
+	j = 0;
+	if (ft_strlen(string) == 1)
+		return (-1);
+	else if (check_for_continous_zeros(string, i) > 0)
+		return (check_for_continous_zeros(string, i));
+	else if (!ft_check_if_character(string[total], "csdiuxXp%"))
+		return (-1);
+	
+	return (0);
+}
+
 int		string_parser(char *string, int i, va_list arguments)
 {
 	int j;
@@ -46,6 +85,10 @@ int		string_parser(char *string, int i, va_list arguments)
 	j += check_for_flags(string, i);
 	j += check_for_width(string, i + j, arguments);
 	j += check_for_precision(string, i + j, arguments);
+	if (check_string_for_specifier(string, i, i + j) == -1)
+		return (-1);
+	else if (check_string_for_specifier(string, i, i + j) > 0)
+		j += check_string_for_specifier(string, i, i + j);
 	flag_managment(string, i + j, arguments);
 	return (j);
 }

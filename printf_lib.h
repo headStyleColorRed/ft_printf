@@ -6,7 +6,7 @@
 /*   By: rlabrado <headstylecolorred@gmail.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/10 23:39:37 by rlabrado          #+#    #+#             */
-/*   Updated: 2020/08/05 21:35:12 by rlabrado         ###   ########.fr       */
+/*   Updated: 2020/08/08 14:05:06 by rlabrado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -147,6 +147,7 @@ char				*ft_u_itoa(unsigned int number);
 int					ft_putnbr_base(unsigned long long int nbr, char *base);
 int					len(long number);
 int					ft_atoi(const char *str);
+int					ft_check_if_character(char str, char *characters);
 
 /*
 **	*	*	Globals	*	*	**

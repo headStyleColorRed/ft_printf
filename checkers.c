@@ -6,7 +6,7 @@
 /*   By: rlabrado <headstylecolorred@gmail.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/11 19:23:50 by rlabrado          #+#    #+#             */
-/*   Updated: 2020/07/11 19:24:29 by rlabrado         ###   ########.fr       */
+/*   Updated: 2020/08/08 13:23:50 by rlabrado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,13 @@
 
 int		check_for_flags(char *string, int i)
 {
-	if (string[i] == '-')
+	if (string[i] == '0' && string[i + 1] == '-')
+	{
+		set_modifier(type_flags, 1);
+		set_modifier(type_to_modifie, 1);
+		return (2);
+	}
+	else if (string[i] == '-')
 	{
 		set_modifier(type_flags, 1);
 		set_modifier(type_to_modifie, 1);
