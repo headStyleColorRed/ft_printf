@@ -21,7 +21,7 @@ int main(void)
 
 	int my_total;
 	int his_total;
-	int d = -10;
+	int d = -7;
 	my_total = ft_printf("-->|%*.*d|<--\n", 4, 3, d);
 	his_total = printf("-->|%*.*d|<--\n", 4, 3, d);
 	printf("My  total -> %d\n", my_total);
