@@ -29,7 +29,7 @@ int		print_big_x(int num)
 void	print_p(unsigned long int num)
 {
 	if (undefined_behaviour_p())
-		return;
+		return ;
 	if (num == 0 && get_modifier(type_precision) != 999999)
 		print_unmodified_s("0x");
 	else if (num == 0)

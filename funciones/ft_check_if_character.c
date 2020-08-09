@@ -1,17 +1,21 @@
-//
-//  ft_check_if_character.c
-//  Wolfenstein
-//
-//  Created by Rodrigo  on 15/05/2020.
-//  Copyright © 2020 Rodrigo . All rights reserved.
-//
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_check_if_character.c                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rlabrado <headstylecolorred@gmail.com>     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/08/09 14:36:44 by rlabrado          #+#    #+#             */
+/*   Updated: 2020/08/09 14:36:52 by rlabrado         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "../printf_lib.h"
 
 int		ft_check_if_character(char str, char *characters)
 {
 	int i;
-	
+
 	i = 0;
 	while (characters[i])
 		if (characters[i++] == str)

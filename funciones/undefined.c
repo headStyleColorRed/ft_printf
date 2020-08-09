@@ -1,7 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   undefined.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rlabrado <headstylecolorred@gmail.com>     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/08/09 14:37:23 by rlabrado          #+#    #+#             */
+/*   Updated: 2020/08/09 14:38:25 by rlabrado         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "../printf_lib.h"
 
-int		undefined_behaviour_p()
+int		undefined_behaviour_p(void)
 {
 	int precision;
 	int width;
@@ -13,7 +24,8 @@ int		undefined_behaviour_p()
 		initialize_globals();
 		print_s("0x0000004d2");
 		return (1);
-	} else if (!width && precision != 999999 && precision )
+	}
+	else if (!width && precision != 999999 && precision)
 	{
 		initialize_globals();
 		print_s("0x00000");
