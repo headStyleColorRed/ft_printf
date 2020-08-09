@@ -6,7 +6,7 @@
 /*   By: rlabrado <headstylecolorred@gmail.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/10 22:18:35 by rlabrado          #+#    #+#             */
-/*   Updated: 2020/08/09 13:19:26 by rlabrado         ###   ########.fr       */
+/*   Updated: 2020/08/09 22:20:40 by rlabrado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,13 +43,13 @@ int		string_parser(char *string, int i, va_list arguments)
 
 	j = 0;
 	initialize_globals();
-	j += check_for_flags(string, i);
+	if (check_string_for_specifier(string, i, i + j) > 0)
+		j += check_string_for_specifier(string, i, i + j);
+	j += check_for_flags(string, i + j);
 	j += check_for_width(string, i + j, arguments);
 	j += check_for_precision(string, i + j, arguments);
 	if (check_string_for_specifier(string, i, i + j) == -1)
 		return (-1);
-	else if (check_string_for_specifier(string, i, i + j) > 0)
-		j += check_string_for_specifier(string, i, i + j);
 	flag_managment(string, i + j, arguments);
 	return (j);
 }

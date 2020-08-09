@@ -6,7 +6,7 @@
 /*   By: rlabrado <headstylecolorred@gmail.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/09 14:30:48 by rlabrado          #+#    #+#             */
-/*   Updated: 2020/08/09 14:30:51 by rlabrado         ###   ########.fr       */
+/*   Updated: 2020/08/09 21:51:49 by rlabrado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,10 @@ int		check_for_continous_zeros(char *string, int i)
 			number_of_zeros++;
 		spaces_to_forward++;
 	}
-	if (number_of_zeros >= 2)
+	if (number_of_zeros >= 2 && get_modifier(type_precision) == 999999)
 	{
 		initialize_globals();
-		return (spaces_to_forward - 1);
+		return (spaces_to_forward);
 	}
 	return (0);
 }
