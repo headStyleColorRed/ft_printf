@@ -18,6 +18,7 @@ SRC =		ft_printf.c \
 			funciones/ft_u_itoa.c \
 			funciones/prehandlers.c \
 			funciones/undefined.c \
+			funciones/specifier_checker.c \
 			funciones/ft_check_if_character.c \
 			funciones/ft_putnbr_base.c \
 
