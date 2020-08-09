@@ -6,7 +6,7 @@
 /*   By: rlabrado <headstylecolorred@gmail.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/10 22:52:39 by rlabrado          #+#    #+#             */
-/*   Updated: 2020/07/10 22:54:49 by rlabrado         ###   ########.fr       */
+/*   Updated: 2020/08/09 13:17:44 by rlabrado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,14 +55,7 @@ int		manage_wildcard(long num, int option)
 	}
 	else
 	{
-		if (num < 0)
-		{
-			num *= -1;
-			set_modifier(type_flags, 1);
-			set_modifier(type_to_modifie, 1);
-			set_modifier(type_width, num);
-		}
-		else
+		if (num >= 0)
 			set_modifier(type_precision, num);
 		return (2);
 	}
