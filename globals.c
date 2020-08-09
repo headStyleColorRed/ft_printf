@@ -6,7 +6,7 @@
 /*   By: rlabrado <headstylecolorred@gmail.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/10 22:31:57 by rlabrado          #+#    #+#             */
-/*   Updated: 2020/07/11 19:02:37 by rlabrado         ###   ########.fr       */
+/*   Updated: 2020/08/09 13:49:20 by rlabrado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	initialize_globals(void)
 {
 	g_global_variables.flags = 0;
 	g_global_variables.width = 0;
-	g_global_variables.precision = 1111;
+	g_global_variables.precision = 999999;
 	g_global_variables.to_modifie = 0;
 	g_global_variables.specifier = 0;
 	g_global_variables.w_length = 0;

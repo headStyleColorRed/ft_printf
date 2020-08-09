@@ -6,7 +6,7 @@
 /*   By: rlabrado <headstylecolorred@gmail.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/10 22:12:09 by rlabrado          #+#    #+#             */
-/*   Updated: 2020/07/10 22:13:52 by rlabrado         ###   ########.fr       */
+/*   Updated: 2020/08/09 13:49:20 by rlabrado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	pre_handle_flags_integer(int *num)
 {
 	set_wordifier(type_is_num, 1);
-	if (get_modifier(type_width) == 0 && get_modifier(type_precision) != 1111 &&
+	if (get_modifier(type_width) == 0 && get_modifier(type_precision) != 999999 &&
 	get_modifier(type_flags) == 0)
 	{
 		set_modifier(type_width, get_modifier(type_precision));
@@ -23,10 +23,10 @@ void	pre_handle_flags_integer(int *num)
 	}
 	set_wordifier(type_w_length, len(*num));
 	if ((get_modifier(type_precision) >= get_wordifier(type_w_length)) &&
-	get_modifier(type_precision) != 1111 && get_modifier(type_flags) == 1)
+	get_modifier(type_precision) != 999999 && get_modifier(type_flags) == 1)
 		set_modifier(type_flags, 3);
 	else if ((get_modifier(type_precision) >= get_wordifier(type_w_length)) &&
-	get_modifier(type_precision) != 1111)
+	get_modifier(type_precision) != 999999)
 		set_modifier(type_flags, 2);
 	if (*num < 0)
 	{
@@ -38,7 +38,7 @@ void	pre_handle_flags_integer(int *num)
 void	pre_handle_flags_hexadecimal(char *str)
 {
 	set_wordifier(type_is_num, 1);
-	if (get_modifier(type_width) == 0 && get_modifier(type_precision) != 1111 &&
+	if (get_modifier(type_width) == 0 && get_modifier(type_precision) != 999999 &&
 	get_modifier(type_flags) == 0)
 	{
 		set_modifier(type_width, get_modifier(type_precision));
@@ -46,17 +46,17 @@ void	pre_handle_flags_hexadecimal(char *str)
 	}
 	set_wordifier(type_w_length, ft_strlen(str));
 	if ((get_modifier(type_precision) >= get_wordifier(type_w_length)) &&
-	get_modifier(type_precision) != 1111 && get_modifier(type_flags) == 1)
+	get_modifier(type_precision) != 999999 && get_modifier(type_flags) == 1)
 		set_modifier(type_flags, 3);
 	else if ((get_modifier(type_precision) >= get_wordifier(type_w_length)) &&
-	get_modifier(type_precision) != 1111)
+	get_modifier(type_precision) != 999999)
 		set_modifier(type_flags, 2);
 }
 
 void	pre_handle_flags_unsigned(unsigned int *num)
 {
 	set_wordifier(type_is_num, 1);
-	if (get_modifier(type_width) == 0 && get_modifier(type_precision) != 1111 &&
+	if (get_modifier(type_width) == 0 && get_modifier(type_precision) != 999999 &&
 	get_modifier(type_flags) == 0)
 	{
 		set_modifier(type_width, get_modifier(type_precision));
@@ -64,10 +64,10 @@ void	pre_handle_flags_unsigned(unsigned int *num)
 	}
 	set_wordifier(type_w_length, len(*num));
 	if ((get_modifier(type_precision) >= get_wordifier(type_w_length)) &&
-	get_modifier(type_precision) != 1111 && get_modifier(type_flags) == 1)
+	get_modifier(type_precision) != 999999 && get_modifier(type_flags) == 1)
 		set_modifier(type_flags, 3);
 	else if ((get_modifier(type_precision) >= get_wordifier(type_w_length)) &&
-	get_modifier(type_precision) != 1111)
+	get_modifier(type_precision) != 999999)
 		set_modifier(type_flags, 2);
 	if (*num < 0)
 	{

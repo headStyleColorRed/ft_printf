@@ -6,7 +6,7 @@
 /*   By: rlabrado <headstylecolorred@gmail.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/10 23:28:21 by rlabrado          #+#    #+#             */
-/*   Updated: 2020/07/10 23:36:04 by rlabrado         ###   ########.fr       */
+/*   Updated: 2020/08/09 13:49:20 by rlabrado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ void	print_nulls(char *string)
 	int i;
 
 	i = 0;
-	if (get_modifier(type_precision) != 1111 &&
+	if (get_modifier(type_precision) != 999999 &&
 	get_modifier(type_precision) < ft_strlen(string))
 		set_wordifier(type_w_length, get_modifier(type_precision));
 	else

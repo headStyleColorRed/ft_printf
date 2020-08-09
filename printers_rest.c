@@ -6,7 +6,7 @@
 /*   By: rlabrado <headstylecolorred@gmail.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/10 23:31:41 by rlabrado          #+#    #+#             */
-/*   Updated: 2020/08/09 12:34:54 by rlabrado         ###   ########.fr       */
+/*   Updated: 2020/08/09 13:49:20 by rlabrado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,13 +30,13 @@ void	print_p(unsigned long int num)
 {
 	if (undefined_behaviour_p())
 		return;
-	if (num == 0 && get_modifier(type_precision) != 1111)
+	if (num == 0 && get_modifier(type_precision) != 999999)
 		print_unmodified_s("0x");
 	else if (num == 0)
 		print_unmodified_s("0x0");
 	else
 	{
-		set_modifier(type_precision, 1111);
+		set_modifier(type_precision, 999999);
 		set_wordifier(type_is_ptr, 1);
 		ft_putnbr_base(num, "0123456789abcdef");
 	}

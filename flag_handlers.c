@@ -6,7 +6,7 @@
 /*   By: rlabrado <headstylecolorred@gmail.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/10 23:12:06 by rlabrado          #+#    #+#             */
-/*   Updated: 2020/07/10 23:26:51 by rlabrado         ###   ########.fr       */
+/*   Updated: 2020/08/09 13:49:20 by rlabrado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,7 @@ int		handler_zero_flag(void)
 	result = 0;
 	if (spaces_to_write > zeros_to_write)
 		result += flag_one_handler();
-	if (get_modifier(type_precision) != 1111)
+	if (get_modifier(type_precision) != 999999)
 		result += flag_two_handler();
 	else
 	{
