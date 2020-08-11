@@ -6,7 +6,7 @@
 /*   By: rlabrado <headstylecolorred@gmail.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/10 23:28:21 by rlabrado          #+#    #+#             */
-/*   Updated: 2020/08/09 13:49:20 by rlabrado         ###   ########.fr       */
+/*   Updated: 2020/08/11 21:51:53 by rlabrado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ void	print_d(int num)
 	int		i;
 
 	i = 0;
+	set_wordifier(type_orig_length, ft_strlen(ft_itoa(num)));
 	pre_handle_flags_integer(&num);
 	handle_flags(1);
 	number = ft_itoa(num);

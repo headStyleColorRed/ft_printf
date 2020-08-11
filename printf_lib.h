@@ -6,7 +6,7 @@
 /*   By: rlabrado <headstylecolorred@gmail.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/10 23:39:37 by rlabrado          #+#    #+#             */
-/*   Updated: 2020/08/09 14:39:09 by rlabrado         ###   ########.fr       */
+/*   Updated: 2020/08/11 20:58:01 by rlabrado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ typedef enum		e_print_type
 	type_length,
 	type_to_modifie,
 	type_w_length,
+	type_orig_length,
 	type_is_negative,
 	type_is_ptr,
 	type_is_hex,
@@ -61,6 +62,7 @@ typedef struct		s_globals
 	int length;
 	int to_modifie;
 	int w_length;
+	int	type_orig_length;
 	int is_negative;
 	int is_ptr;
 	int is_hex;

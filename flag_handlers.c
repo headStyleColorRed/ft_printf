@@ -6,7 +6,7 @@
 /*   By: rlabrado <headstylecolorred@gmail.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/10 23:12:06 by rlabrado          #+#    #+#             */
-/*   Updated: 2020/08/09 22:26:11 by rlabrado         ###   ########.fr       */
+/*   Updated: 2020/08/11 22:14:16 by rlabrado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ int		flag_one_handler(void)
 	zeros_to_write = get_modifier(type_precision);
 	written_result = 0;
 	result = 0;
+	if (get_wordifier(type_is_negative) && get_wordifier(type_orig_length) == 2 && get_modifier(type_precision) >= 2)
+		spaces_to_write--;
 	if (zeros_to_write > get_wordifier(type_w_length))
 	{
 		if (get_wordifier(type_is_negative))
@@ -83,6 +85,8 @@ int		handler_zero_flag(void)
 	spaces_to_write = get_modifier(type_width);
 	zeros_to_write = get_modifier(type_precision);
 	result = 0;
+	if (get_wordifier(type_is_negative))
+		spaces_to_write--;
 	if (spaces_to_write > zeros_to_write)
 		result += flag_one_handler();
 	if (get_modifier(type_precision) != 999999)
