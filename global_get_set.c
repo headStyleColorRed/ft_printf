@@ -6,7 +6,7 @@
 /*   By: rlabrado <headstylecolorred@gmail.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/10 22:37:19 by rlabrado          #+#    #+#             */
-/*   Updated: 2020/08/11 21:02:55 by rlabrado         ###   ########.fr       */
+/*   Updated: 2020/08/13 18:08:46 by rlabrado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,8 @@ void	set_wordifier(int e_print_type, int amount)
 		g_global_variables.is_num = amount;
 	else if (e_print_type == type_orig_length)
 		g_global_variables.type_orig_length = amount;
+	else if (e_print_type == type_is_percentage)
+		g_global_variables.type_is_percentage = amount;
 }
 
 int		get_modifier(int e_print_type)
@@ -76,6 +78,8 @@ int		get_wordifier(int e_print_type)
 		return (g_global_variables.is_num);
 	else if (e_print_type == type_orig_length)
 		return (g_global_variables.type_orig_length);
+	else if (e_print_type == type_is_percentage)
+		return (g_global_variables.type_is_percentage);
 	else
 		return (0);
 }

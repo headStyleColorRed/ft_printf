@@ -6,7 +6,7 @@
 /*   By: rlabrado <headstylecolorred@gmail.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/10 23:39:37 by rlabrado          #+#    #+#             */
-/*   Updated: 2020/08/11 20:58:01 by rlabrado         ###   ########.fr       */
+/*   Updated: 2020/08/13 18:07:04 by rlabrado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,7 @@ typedef enum		e_print_type
 	type_is_ptr,
 	type_is_hex,
 	type_is_num,
+	type_is_percentage
 }					t_type;
 
 typedef struct		s_globals
@@ -67,6 +68,7 @@ typedef struct		s_globals
 	int is_ptr;
 	int is_hex;
 	int is_num;
+	int type_is_percentage;
 }					t_globals;
 
 t_globals			g_global_variables;

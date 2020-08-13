@@ -6,7 +6,7 @@
 /*   By: rlabrado <headstylecolorred@gmail.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/10 23:12:06 by rlabrado          #+#    #+#             */
-/*   Updated: 2020/08/11 22:14:16 by rlabrado         ###   ########.fr       */
+/*   Updated: 2020/08/13 20:44:07 by rlabrado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,10 @@ int		flag_one_handler(void)
 	result = 0;
 	if (get_wordifier(type_is_negative) && get_wordifier(type_orig_length) == 2 && get_modifier(type_precision) >= 2)
 		spaces_to_write--;
+
+	if (get_wordifier(type_is_percentage))
+		spaces_to_write = 0;
+
 	if (zeros_to_write > get_wordifier(type_w_length))
 	{
 		if (get_wordifier(type_is_negative))
@@ -37,7 +41,7 @@ int		flag_one_handler(void)
 		print_spaces(spaces_to_write - get_wordifier(type_w_length));
 		result += spaces_to_write - get_wordifier(type_w_length);
 	}
-	return (result);
+	return (result < 0 ? 0 : result);
 }
 
 int		flag_two_handler(void)
@@ -53,6 +57,18 @@ int		flag_two_handler(void)
 	result = 0;
 	zeros_to_write = get_modifier(type_precision) -
 	get_wordifier(type_w_length);
+	
+	// Percentage stuff
+	if (get_wordifier(type_is_percentage))
+	{
+		if (get_modifier(type_width) == 0)
+			return (0);
+		else if (get_modifier(type_width) > get_modifier(type_precision))
+			zeros_to_write = get_modifier(type_width)  - 1;
+		else if (get_modifier(type_precision) > get_modifier(type_width))
+			zeros_to_write = get_modifier(type_width) - 1;
+	}
+
 	if (get_wordifier(type_is_negative))
 	{
 		write(1, "-", 1);
@@ -87,6 +103,7 @@ int		handler_zero_flag(void)
 	result = 0;
 	if (get_wordifier(type_is_negative))
 		spaces_to_write--;
+	
 	if (spaces_to_write > zeros_to_write)
 		result += flag_one_handler();
 	if (get_modifier(type_precision) != 999999)

@@ -6,7 +6,7 @@
 /*   By: rlabrado <headstylecolorred@gmail.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/10 23:31:41 by rlabrado          #+#    #+#             */
-/*   Updated: 2020/08/09 13:49:20 by rlabrado         ###   ########.fr       */
+/*   Updated: 2020/08/13 18:09:32 by rlabrado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ void	print_p(unsigned long int num)
 void	print_percent(void)
 {
 	set_wordifier(type_w_length, 1);
+	set_wordifier(type_is_percentage, 1);
 	handle_flags(1);
 	write(1, "%", 1);
 	handle_flags(2);
