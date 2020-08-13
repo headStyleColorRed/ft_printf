@@ -17,7 +17,7 @@ int main(void)
 
 	// check_c();
 	// check_s();
-	// check_d();
+	check_d();
 	// check_i();
 	// check_p();
 	// check_percentage();
@@ -25,7 +25,6 @@ int main(void)
 	// check_u();
 	// check_XX();
 
-	printf("Hello World");
 
 	return (0);
 }

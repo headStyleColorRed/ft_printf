@@ -6,7 +6,7 @@
 /*   By: rlabrado <headstylecolorred@gmail.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/10 23:28:21 by rlabrado          #+#    #+#             */
-/*   Updated: 2020/08/11 21:51:53 by rlabrado         ###   ########.fr       */
+/*   Updated: 2020/08/13 22:27:35 by rlabrado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,10 @@ void	print_d(int num)
 	int		i;
 
 	i = 0;
-	set_wordifier(type_orig_length, ft_strlen(ft_itoa(num)));
+	number = ft_itoa(num);
+	set_wordifier(type_orig_length, ft_strlen(number));
 	pre_handle_flags_integer(&num);
 	handle_flags(1);
-	number = ft_itoa(num);
 	if (get_wordifier(type_is_negative) && get_modifier(type_flags) != 2
 	&& number[0] != '-')
 		write(1, "-", 1);
@@ -50,6 +50,7 @@ void	print_u(unsigned int num)
 		write(1, &number[i++], 1);
 	handle_flags(2);
 	add_to_length(type_length, get_wordifier(type_w_length));
+	free(number);
 }
 
 void	print_nulls(char *string)
