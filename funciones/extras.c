@@ -6,7 +6,7 @@
 /*   By: rlabrado <headstylecolorred@gmail.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/10 21:36:08 by rlabrado          #+#    #+#             */
-/*   Updated: 2020/07/10 21:42:14 by rlabrado         ###   ########.fr       */
+/*   Updated: 2020/08/13 17:52:11 by rlabrado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,10 +68,10 @@ int		ft_isalnum(int c)
 int		only_zero_exception(int num)
 {
 	if (num == 0 && get_modifier(type_precision) == 0 &&
-	get_modifier(type_flags) >= 2)
+	get_modifier(type_flags) >= 1 && get_modifier(type_width) == 0 )
 	{
 		substract_to_length(type_length, 1);
-		return (1);
+		return (-1);
 	}
 	else if (num == 0 && get_modifier(type_precision) == 0 &&
 	get_modifier(type_flags) == 1)

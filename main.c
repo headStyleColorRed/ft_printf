@@ -22,25 +22,26 @@ int main(void)
 
 	int exittab[7] = {-135, -12, -1, 0, 1, 13, 198};
 	
-	int d = exittab[2];
-	// my_total = ft_printf("-->|%*.*d|<--\n", 4, 2, d);
-	// his_total = printf("-->|%*.*d|<--\n", 4, 2, d);
-	// printf("My  total -> %d\n", my_total);
-	// printf("His total -> %d\n\n", his_total);
+	int d = exittab[3];
 
-	// my_total = ft_printf("-->|%0*.d|<--\n", 3, d);
-	// his_total = printf("-->|%0*.d|<--\n", 3, d);
-	// printf("My  total -> %d\n", my_total);
-	// printf("His total -> %d\n\n", his_total);
+	my_total = ft_printf("-->|%0*.d|<--\n", 3, d);
+	his_total = printf("-->|%0*.d|<--\n", 3, d);
+	printf("My  total -> %d\n", my_total);
+	printf("His total -> %d\n\n", his_total);
 
-	// my_total = ft_printf("-->|%0*.*d|<--\n", 3, 1, d);
-	// his_total = printf("-->|%0*.*d|<--\n", 3, 1, d);
-	// printf("My  total -> %d\n", my_total);
-	// printf("His total -> %d\n\n", his_total);
+	my_total = ft_printf("-->|%.0i|<--\n", d);
+	his_total = printf("-->|%.0i|<--\n", d);
+	printf("My  total -> %d\n", my_total);
+	printf("His total -> %d\n\n", his_total);
 
-	d = exittab[3];
-	my_total = ft_printf("-->|%0*.d|<--\n", 1, d);
-	his_total = printf("-->|%0*.d|<--\n", 1, d);
+	my_total = ft_printf("-->|%0*.i|<--\n", 1, d);
+	his_total = printf("-->|%0*.i|<--\n", 1, d);
+	printf("My  total -> %d\n", my_total);
+	printf("His total -> %d\n\n", his_total);
+
+
+	my_total = ft_printf("-->|%-.d|<--\n", d);
+	his_total = printf("-->|%-.d|<--\n", d);
 	printf("My  total -> %d\n", my_total);
 	printf("His total -> %d\n\n", his_total);
 }
