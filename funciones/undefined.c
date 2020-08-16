@@ -6,7 +6,7 @@
 /*   By: rlabrado <headstylecolorred@gmail.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/09 14:37:23 by rlabrado          #+#    #+#             */
-/*   Updated: 2020/08/09 14:38:25 by rlabrado         ###   ########.fr       */
+/*   Updated: 2020/08/16 12:29:56 by rlabrado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,4 +32,17 @@ int		undefined_behaviour_p(void)
 		return (1);
 	}
 	return (0);
+}
+
+
+int		undefined_behaviour_d(int num)
+{
+	int max_int;
+
+	max_int = (2147483647 * -1) - 1;
+	if (num == max_int && get_modifier(type_flags) == 2) {
+		return (1);
+	} else {
+		return 0;
+	}
 }

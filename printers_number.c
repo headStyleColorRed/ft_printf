@@ -6,7 +6,7 @@
 /*   By: rlabrado <headstylecolorred@gmail.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/10 23:28:21 by rlabrado          #+#    #+#             */
-/*   Updated: 2020/08/13 22:54:05 by rlabrado         ###   ########.fr       */
+/*   Updated: 2020/08/16 13:35:30 by rlabrado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ void	print_d(int num)
 	if (get_wordifier(type_is_negative) && get_modifier(type_flags) != 2
 	&& number[0] != '-')
 		write(1, "-", 1);
+	i += undefined_behaviour_d(num);
 	while (number[i] != '\0' && i < get_wordifier(type_w_length)
 	&& !only_zero_exception(num))
 		write(1, &number[i++], 1);

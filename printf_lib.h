@@ -6,7 +6,7 @@
 /*   By: rlabrado <headstylecolorred@gmail.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/10 23:39:37 by rlabrado          #+#    #+#             */
-/*   Updated: 2020/08/13 18:07:04 by rlabrado         ###   ########.fr       */
+/*   Updated: 2020/08/16 12:22:43 by rlabrado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -153,6 +153,7 @@ int					len(long number);
 int					ft_atoi(const char *str);
 int					ft_check_if_character(char str, char *characters);
 int					undefined_behaviour_p();
+int					undefined_behaviour_d(int num);
 int					check_for_continous_zeros(char *string, int i);
 int					check_string_for_specifier(char *string, int i, int total);
 
