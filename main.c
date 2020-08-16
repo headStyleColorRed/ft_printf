@@ -11,13 +11,14 @@ void check_percentage();
 void check_x();
 void check_u();
 void check_XX();
+void check_equality();
 
 int main(void)
 {
 
 	// check_c();
 	// check_s();
-	check_d();
+	// check_d();
 	// check_i();
 	// check_p();
 	// check_percentage();
@@ -25,6 +26,12 @@ int main(void)
 	// check_u();
 	// check_XX();
 
+	int a = 51;
+	int b = 23;
+	int c = 92;
+
+	
+	assert(printf("-->|%-4.x, %x, %x|<--\n", a, b, c) == ft_printf("-->|%-4.x, %x, %x|<--\n", a, b, c));
 
 	return (0);
 }
