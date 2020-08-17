@@ -6,7 +6,7 @@
 /*   By: rlabrado <headstylecolorred@gmail.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/10 23:39:37 by rlabrado          #+#    #+#             */
-/*   Updated: 2020/08/16 12:22:43 by rlabrado         ###   ########.fr       */
+/*   Updated: 2020/08/17 21:20:49 by rlabrado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,8 @@ typedef enum		e_print_type
 	type_is_ptr,
 	type_is_hex,
 	type_is_num,
-	type_is_percentage
+	type_is_percentage,
+	type_is_negative_hex
 }					t_type;
 
 typedef struct		s_globals
@@ -69,6 +70,7 @@ typedef struct		s_globals
 	int is_hex;
 	int is_num;
 	int type_is_percentage;
+	int type_is_negative_hex;
 }					t_globals;
 
 t_globals			g_global_variables;
@@ -154,6 +156,7 @@ int					ft_atoi(const char *str);
 int					ft_check_if_character(char str, char *characters);
 int					undefined_behaviour_p();
 int					undefined_behaviour_d(int num);
+int					undefined_behaviour_x(void);
 int					check_for_continous_zeros(char *string, int i);
 int					check_string_for_specifier(char *string, int i, int total);
 

@@ -6,7 +6,7 @@
 /*   By: rlabrado <headstylecolorred@gmail.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/10 23:31:41 by rlabrado          #+#    #+#             */
-/*   Updated: 2020/08/13 18:09:32 by rlabrado         ###   ########.fr       */
+/*   Updated: 2020/08/17 21:01:28 by rlabrado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 int		print_x(int num)
 {
+	if (num < 0)
+		set_wordifier(type_is_negative_hex, 1);
 	set_wordifier(type_is_hex, 1);
 	ft_putnbr_base(num, "0123456789abcdef");
 	return (0);
@@ -21,6 +23,8 @@ int		print_x(int num)
 
 int		print_big_x(int num)
 {
+	if (num < 0)
+		set_wordifier(type_is_negative_hex, 1);
 	set_wordifier(type_is_hex, 1);
 	ft_putnbr_base(num, "0123456789ABCDEF");
 	return (0);

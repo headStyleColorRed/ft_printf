@@ -16,5 +16,6 @@ gcc -g -Wall -Wextra -Werror main.c \
 						funciones/undefined.c \
 						funciones/specifier_checker.c \
 						funciones/ft_check_if_character.c \
+						funciones/hexadecimal_undefined.c \
 						funciones/ft_putnbr_base.c && \
 ./a.out

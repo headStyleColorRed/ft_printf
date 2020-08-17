@@ -6,7 +6,7 @@
 /*   By: rlabrado <headstylecolorred@gmail.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/10 22:56:03 by rlabrado          #+#    #+#             */
-/*   Updated: 2020/07/10 23:20:56 by rlabrado         ###   ########.fr       */
+/*   Updated: 2020/08/17 21:17:49 by rlabrado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void	no_flags(void)
 	int minus_counter;
 	int i;
 
+	if (undefined_behaviour_x())
+		return ;
 	i = 0;
 	minus_counter = get_modifier(type_width);
 	while (minus_counter-- > get_wordifier(type_w_length))

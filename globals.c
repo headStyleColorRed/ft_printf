@@ -6,7 +6,7 @@
 /*   By: rlabrado <headstylecolorred@gmail.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/10 22:31:57 by rlabrado          #+#    #+#             */
-/*   Updated: 2020/08/13 18:07:29 by rlabrado         ###   ########.fr       */
+/*   Updated: 2020/08/17 20:56:51 by rlabrado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ void	initialize_globals(void)
 	g_global_variables.is_hex = 0;
 	g_global_variables.is_num = 0;
 	g_global_variables.type_is_percentage = 0;
+	g_global_variables.type_is_negative_hex = 0;
 }
 
 void	add_to_length(int e_print_type, int amount)
