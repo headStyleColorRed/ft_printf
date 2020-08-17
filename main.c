@@ -10,7 +10,7 @@ int main(void)
 {
 
 	// test_different_d();
-	test_different_d();
+	test_one_x();
 	//  test_x(-135);
 	return (0);
 }
@@ -21,8 +21,8 @@ void test_one_x()
 	int his_total;
 	int x = -135;
 
-	my_total = ft_printf("-->|%40.38d|<--\n", x);
-	his_total = printf("-->|%40.38d|<--\n", x);
+	my_total = ft_printf("-->|%*.*x|<--\n", 14, 21, x);
+	his_total = printf("-->|%*.*x|<--\n", 14, 21, x);
 	printf("My  total -> %d\n", my_total);
 	printf("His total -> %d\n\n", his_total);
 }

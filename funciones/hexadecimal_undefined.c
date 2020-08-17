@@ -6,7 +6,7 @@
 /*   By: rlabrado <headstylecolorred@gmail.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/17 21:23:31 by rlabrado          #+#    #+#             */
-/*   Updated: 2020/08/17 21:28:47 by rlabrado         ###   ########.fr       */
+/*   Updated: 2020/08/17 21:52:41 by rlabrado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,8 @@ int		check_if_compliant(void)
 
 void	set_up_number_of_x_flags(int *number_of_zeros, int *number_of_spaces)
 {
-	number_of_zeros = 0;
-	number_of_spaces = 0;
+	*number_of_zeros = 0;
+	*number_of_spaces = 0;
 	if (get_modifier(type_precision) > get_wordifier(type_w_length))
 		*number_of_zeros = get_modifier(type_precision) -
 		get_wordifier(type_w_length);
@@ -53,11 +53,13 @@ int		undefined_behaviour_x(void)
 	while (number_of_spaces > 0)
 	{
 		write(1, " ", 1);
+		number_of_spaces--;
 		i++;
 	}
 	while (number_of_zeros > 0)
 	{
 		write(1, "0", 1);
+		number_of_zeros--;
 		i++;
 	}
 	add_to_length(type_length, i);
