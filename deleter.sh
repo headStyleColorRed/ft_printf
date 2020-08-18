@@ -1,0 +1,1 @@
+rm -rf .git a.out.dSYM ft_printf_destroyer README.md main.c replacer.sh results.txt compile.sh .gitignore
