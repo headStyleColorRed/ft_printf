@@ -6,7 +6,7 @@
 /*   By: rlabrado <headstylecolorred@gmail.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/10 23:12:06 by rlabrado          #+#    #+#             */
-/*   Updated: 2020/08/17 20:49:18 by rlabrado         ###   ########.fr       */
+/*   Updated: 2020/08/18 18:47:35 by rlabrado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,8 @@ int		flag_one_handler(void)
 	}
 	else if ((spaces_to_write - get_wordifier(type_w_length)) >= 0)
 	{
-		if (get_wordifier(type_is_negative) && get_wordifier(type_w_length) == zeros_to_write)
+		if (get_wordifier(type_is_negative) &&
+		get_wordifier(type_w_length) == zeros_to_write)
 			spaces_to_write--;
 		print_spaces(spaces_to_write - get_wordifier(type_w_length));
 		result += spaces_to_write - get_wordifier(type_w_length);

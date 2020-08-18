@@ -6,7 +6,7 @@
 /*   By: rlabrado <headstylecolorred@gmail.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/10 22:37:19 by rlabrado          #+#    #+#             */
-/*   Updated: 2020/08/17 20:57:54 by rlabrado         ###   ########.fr       */
+/*   Updated: 2020/08/18 18:48:20 by rlabrado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ int		get_wordifier(int e_print_type)
 	else if (e_print_type == type_is_percentage)
 		return (g_global_variables.type_is_percentage);
 	else if (e_print_type == type_is_negative_hex)
-		return g_global_variables.type_is_negative_hex;
+		return (g_global_variables.type_is_negative_hex);
 	else
 		return (0);
 }
