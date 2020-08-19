@@ -31,3 +31,7 @@ Minimun size will be managed and the character % can be followed by zero or more
 + '0'
 + '.'
 + '*'
+
+
+## Purpose
+This is a [42 school](https://www.42madrid.com/) project that imitates part of printf's original behaviours but without memory management.
